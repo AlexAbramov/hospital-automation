@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="DummyDataSource">
+      <ConnectionProperties>
+        <ConnectString />
+        <DataProvider>SQL</DataProvider>
+      </ConnectionProperties>
+      <rd:DataSourceID>2f071d2d-4b05-4e64-8eba-4f38df39e45d</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <BottomMargin>2.5cm</BottomMargin>
+  <RightMargin>2.5cm</RightMargin>
+  <PageWidth>21cm</PageWidth>
+  <ReportParameters>
+    <ReportParameter Name="DepartmentName">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_0</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="PatientName">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="WardNumber">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_2</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>21cm</InteractiveWidth>
+  <rd:GridSpacing>0.25cm</rd:GridSpacing>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <Body>
+    <ColumnSpacing>1cm</ColumnSpacing>
+    <ReportItems>
+      <List Name="list1">
+        <Left>0.25cm</Left>
+        <ReportItems>
+          <Textbox Name="textbox1">
+            <CanShrink>true</CanShrink>
+            <Top>0.25cm</Top>
+            <rd:DefaultName>textbox1</rd:DefaultName>
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>2cm</Height>
+            <Value>=Parameters!DepartmentName.Value
++Chr(10)+"ФИО больного: "+Parameters!PatientName.Value
++Chr(10)+"Номер палаты: "+Parameters!WardNumber.Value
++Chr(10)+"Код анализа: "+Fields!AnalysisCode.Value
++Chr(10)+"Название анализа: "+Fields!AnalysisName.Value
++Chr(10)+"Дата произведения анализа: "+Fields!ExecutionDate.Value
++Chr(10)+"Результат анализа: "+Fields!Result.Value</Value>
+          </Textbox>
+        </ReportItems>
+        <DataSetName>ReportsDataSet_AnalysisResult</DataSetName>
+        <Top>0.25cm</Top>
+        <Width>15.5cm</Width>
+        <Height>2.53968cm</Height>
+      </List>
+    </ReportItems>
+    <Height>6.75cm</Height>
+  </Body>
+  <rd:ReportID>f4f1f73f-286e-4501-ab6b-0fe90df1a710</rd:ReportID>
+  <LeftMargin>2.5cm</LeftMargin>
+  <DataSets>
+    <DataSet Name="ReportsDataSet_AnalysisResult">
+      <rd:DataSetInfo>
+        <rd:DataSetName>ReportsDataSet</rd:DataSetName>
+        <rd:TableName>AnalysisResult</rd:TableName>
+      </rd:DataSetInfo>
+      <Query>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+        <CommandText />
+        <DataSourceName>DummyDataSource</DataSourceName>
+      </Query>
+      <Fields>
+        <Field Name="AnalysisCode">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>AnalysisCode</DataField>
+        </Field>
+        <Field Name="AnalysisName">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>AnalysisName</DataField>
+        </Field>
+        <Field Name="ExecutionDate">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>ExecutionDate</DataField>
+        </Field>
+        <Field Name="Result">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Result</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <Width>16cm</Width>
+  <InteractiveHeight>29.7cm</InteractiveHeight>
+  <Language>en-US</Language>
+  <TopMargin>2.5cm</TopMargin>
+  <PageHeight>29.7cm</PageHeight>
+</Report>

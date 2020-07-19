@@ -1,0 +1,569 @@
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Patients]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[Patients](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[PassportId] [int] NOT NULL,
+	[InsuranceId] [int] NOT NULL,
+	[PatientIdentificationId] [int] NOT NULL,
+	[DoctorId] [int] NOT NULL CONSTRAINT [DF_Patients_DoctorId]  DEFAULT ((0)),
+	[DiagnosisId] [int] NOT NULL CONSTRAINT [DF_Patients_DiagnosisId]  DEFAULT ((0)),
+	[PatientData] [varchar](max) NOT NULL CONSTRAINT [DF_Patients_PatientData]  DEFAULT (''),
+	[PatientDescription] [varchar](max) NOT NULL CONSTRAINT [DF_Patients_PatientDescription]  DEFAULT (''),
+	[AdmissionDate] [datetime] NOT NULL,
+	[WardId] [int] NOT NULL DEFAULT ((0)),
+ CONSTRAINT [PK_Patients] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BaseUnits]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[BaseUnits](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [varchar](50) NOT NULL,
+	[ShortName] [varchar](50) NOT NULL,
+ CONSTRAINT [PK_BaseUnits] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Medicaments]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[Medicaments](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [varchar](50) NOT NULL,
+ CONSTRAINT [PK_Medicaments] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Units]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[Units](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [varchar](50) NOT NULL,
+	[ProductId] [int] NOT NULL,
+	[BaseUnitId] [int] NOT NULL,
+	[Coef] [decimal](18, 0) NOT NULL,
+ CONSTRAINT [PK_MedicamentUnits] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[InsuranceCompanies]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[InsuranceCompanies](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [varchar](50) NOT NULL,
+ CONSTRAINT [PK_InsuranceCompanies] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PrescriptionTypes]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[PrescriptionTypes](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [varchar](50) NOT NULL,
+ CONSTRAINT [PK_PrescriptionTypes] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[DocumentTypes]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[DocumentTypes](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [varchar](50) NOT NULL
+) ON [PRIMARY]
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[WardTypes]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[WardTypes](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [varchar](50) NOT NULL,
+ CONSTRAINT [PK_WardTypes] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[MedicamentGroups]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[MedicamentGroups](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [varchar](50) NOT NULL,
+ CONSTRAINT [PK_MedicamentGroups] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Documents]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[Documents](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Date] [datetime] NOT NULL,
+	[UserId] [int] NOT NULL CONSTRAINT [DF_Documents_UserId]  DEFAULT ((0)),
+ CONSTRAINT [PK_Documents] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[MedicamentGroupTies]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[MedicamentGroupTies](
+	[MedicamentId] [int] NOT NULL,
+	[MedicamentGroupId] [int] NOT NULL
+) ON [PRIMARY]
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Complaints]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[Complaints](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Time] [datetime] NOT NULL,
+	[CaseHistoryId] [int] NOT NULL,
+	[Complaint] [varchar](max) NOT NULL,
+ CONSTRAINT [PK_Complaints] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Products]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[Products](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Code] [varchar](10) NOT NULL,
+	[Name] [varchar](50) NOT NULL,
+	[PackedNumber] [int] NOT NULL,
+	[MedicamentId] [int] NOT NULL,
+	[Maker] [varchar](50) NOT NULL CONSTRAINT [DF_Products_Maker]  DEFAULT (''),
+	[BaseUnitId] [int] NOT NULL CONSTRAINT [DF_Products_BaseUnitId]  DEFAULT ((0)),
+	[UnitCount] [decimal](18, 0) NOT NULL CONSTRAINT [DF_Products_UnitCount]  DEFAULT ((1)),
+ CONSTRAINT [PK_Products] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY],
+ CONSTRAINT [UK_Code] UNIQUE NONCLUSTERED 
+(
+	[Code] ASC
+)WITH (PAD_INDEX  = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Insurances]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[Insurances](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[InsuranceCompanyId] [int] NOT NULL,
+	[Number] [varchar](50) NOT NULL,
+	[Series] [varchar](50) NOT NULL,
+	[Delo] [varchar](50) NOT NULL,
+ CONSTRAINT [PK_Insurances] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Analyses]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[Analyses](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[CaseHistoryId] [int] NOT NULL,
+ CONSTRAINT [PK_Analyses] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Prescriptions]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[Prescriptions](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[PatientId] [int] NOT NULL,
+	[PrescriptionTypeId] [int] NOT NULL,
+	[StoreProductId] [int] NOT NULL,
+	[Dose] [decimal](18, 0) NOT NULL,
+	[Multiplicity] [int] NOT NULL,
+	[StartDate] [datetime] NOT NULL,
+	[Duration] [int] NOT NULL,
+ CONSTRAINT [PK_Prescriptions] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[StoreProducts]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[StoreProducts](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[DocumentId] [int] NOT NULL,
+	[ProductId] [int] NOT NULL,
+	[Count] [decimal](18, 0) NOT NULL,
+	[Price] [decimal](18, 0) NOT NULL,
+	[ExpiredDate] [datetime] NULL,
+	[CurrentCount] [decimal](18, 0) NOT NULL CONSTRAINT [DF_StoreProducts_CurrentCount]  DEFAULT ((0)),
+	[ReservedCount] [decimal](18, 0) NOT NULL CONSTRAINT [DF_StoreProducts_ReservedCount]  DEFAULT ((0)),
+ CONSTRAINT [PK_DocumentProducts] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[DiagnosisGroupTies]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[DiagnosisGroupTies](
+	[DiagnosisId] [int] NOT NULL,
+	[MedicamentGroupId] [int] NOT NULL
+) ON [PRIMARY]
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[TaskTypes]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[TaskTypes](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [varchar](50) NOT NULL,
+ CONSTRAINT [PK_TaskTypes] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Tasks]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[Tasks](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[TaskTypeId] [int] NOT NULL,
+	[SenderId] [int] NOT NULL CONSTRAINT [DF_Tasks_SenderId]  DEFAULT ((0)),
+	[ReceiverId] [int] NOT NULL CONSTRAINT [DF_Tasks_ReceiverId]  DEFAULT ((0)),
+	[Text] [varchar](500) NOT NULL CONSTRAINT [DF_Tasks_Page]  DEFAULT (''),
+	[TaskStateId] [int] NOT NULL,
+	[WhenCreated] [datetime] NOT NULL,
+	[WhenAccepted] [datetime] NULL,
+	[WhenCompleted] [datetime] NULL,
+ CONSTRAINT [PK_Tasks] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Permissions]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[Permissions](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Page] [varchar](50) NOT NULL,
+	[Name] [varchar](50) NOT NULL,
+ CONSTRAINT [PK_Permissions] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Diagnoses]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[Diagnoses](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Code] [varchar](10) NOT NULL CONSTRAINT [DF_Diagnoses_Code]  DEFAULT (''),
+	[Name] [varchar](50) NOT NULL,
+	[HospitalStayHigh] [int] NOT NULL CONSTRAINT [DF_Diagnoses_HospitalStayHigh]  DEFAULT ((0)),
+	[HospitalStayFirst] [int] NOT NULL CONSTRAINT [DF_Diagnoses_HospitalStayFirst]  DEFAULT ((0)),
+	[HospitalStaySecond] [int] NOT NULL CONSTRAINT [DF_Diagnoses_HospitalStaySecond]  DEFAULT ((0)),
+	[HospitalStayDay] [int] NOT NULL CONSTRAINT [DF_Diagnoses_HospitalStayDay]  DEFAULT ((0)),
+ CONSTRAINT [PK_Diagnoses] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[TaskStates]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[TaskStates](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [varchar](50) NOT NULL,
+ CONSTRAINT [PK_TaskStatuses] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Roles]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[Roles](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [varchar](50) NOT NULL,
+	[Permissions] [varbinary](max) NULL,
+ CONSTRAINT [PK_Roles] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[DbSchemaVersion]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[DbSchemaVersion](
+	[SchemaVersion] [int] NOT NULL,
+	[Script] [varchar](max) NOT NULL
+) ON [PRIMARY]
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Wards]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[Wards](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Number] [varchar](50) NOT NULL,
+	[WardTypeId] [int] NOT NULL,
+	[NumberOfBeds] [int] NOT NULL,
+ CONSTRAINT [PK_Wards] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Passports]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[Passports](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[SerialNumber] [varchar](50) NOT NULL,
+	[IssueDepartment] [varchar](50) NOT NULL,
+	[IssueDate] [datetime] NOT NULL,
+	[DepartmentCode] [varchar](50) NOT NULL,
+	[Surname] [varchar](50) NOT NULL,
+	[Name] [varchar](50) NOT NULL,
+	[MiddleName] [varchar](50) NOT NULL,
+	[Gender] [int] NOT NULL,
+	[Birthday] [datetime] NOT NULL,
+	[BirthPlace] [varchar](50) NOT NULL,
+	[Registration] [varchar](50) NOT NULL,
+ CONSTRAINT [PK_Passports] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Log]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[Log](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Time] [datetime] NOT NULL,
+	[UserId] [int] NOT NULL,
+	[LogType] [int] NOT NULL,
+	[Header] [varchar](50) NOT NULL,
+	[Message] [varchar](5000) NOT NULL,
+ CONSTRAINT [PK_Log] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Users]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[Users](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [varchar](50) NOT NULL CONSTRAINT [DF_Users_Name]  DEFAULT (''),
+	[RoleId] [int] NOT NULL,
+	[Login] [varchar](50) NOT NULL,
+	[Password] [varchar](50) NOT NULL,
+	[Permissions] [varbinary](max) NULL,
+ CONSTRAINT [PK_Users] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[LogTypes]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[LogTypes](
+	[Id] [int] NOT NULL,
+	[Name] [varchar](50) NOT NULL,
+ CONSTRAINT [PK_LogTypes] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PatientIdentifications]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[PatientIdentifications](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Text] [varchar](5000) NOT NULL,
+ CONSTRAINT [PK_PatientIdentifications] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Genders]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[Genders](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [varchar](50) NOT NULL,
+ CONSTRAINT [PK_Genders] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END

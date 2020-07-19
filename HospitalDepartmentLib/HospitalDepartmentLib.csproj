@@ -1,0 +1,138 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="Current">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{06DAE4C8-2CA5-4689-9F20-C83E1CC87A7A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HospitalDepartment</RootNamespace>
+    <AssemblyName>HospitalDepartmentLib</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Configuration\AdminConfig.cs" />
+    <Compile Include="Configuration\UserConfig.cs" />
+    <Compile Include="Proxi\AppCache.cs" />
+    <Compile Include="Configuration\Config.cs" />
+    <Compile Include="Configuration\AppConfig.cs" />
+    <Compile Include="Configuration\TaskType.cs" />
+    <Compile Include="Configuration\Permission.cs" />
+    <Compile Include="Configuration\DepartmentConfig.cs" />
+    <Compile Include="Configuration\ExportTable.cs" />
+    <Compile Include="Configuration\HandbookGroup.cs" />
+    <Compile Include="Configuration\ReportBuilder.cs" />
+    <Compile Include="Configuration\GuiConfig.cs" />
+    <Compile Include="Configuration\Report.cs" />
+    <Compile Include="Proxi\ConfigRecord.cs" />
+    <Compile Include="Utils\Constants.cs" />
+    <Compile Include="Proxi\Analysis.cs" />
+    <Compile Include="Proxi\AnalysisType.cs" />
+    <Compile Include="Xml\AnalysisData.cs" />
+    <Compile Include="Proxi\Prescription.cs" />
+    <Compile Include="Proxi\PrescriptionType.cs" />
+    <Compile Include="Xml\DocumentData.cs" />
+    <Compile Include="Proxi\UserInfo.cs" />
+    <Compile Include="Proxi\WatchingList.cs" />
+    <Compile Include="Proxi\Watching.cs" />
+    <Compile Include="Xml\WatchingData.cs" />
+    <Compile Include="Xml\WatchingSchemeData.cs" />
+    <Compile Include="Proxi\WatchingScheme.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Proxi\StoreProduct.cs" />
+    <Compile Include="Xml\ReacardData.cs" />
+    <Compile Include="Proxi\Reacard.cs" />
+    <Compile Include="Xml\IdentificationData.cs" />
+    <Compile Include="Xml\ObservationData.cs" />
+    <Compile Include="Proxi\ExpertBoard.cs" />
+    <Compile Include="Xml\ExpertBoardData.cs" />
+    <Compile Include="Xml\PatientDiagnoses.cs" />
+    <Compile Include="Xml\DiagnosisInfo.cs" />
+    <Compile Include="Xml\DischargeData.cs" />
+    <Compile Include="Proxi\PatientConsultation.cs" />
+    <Compile Include="Proxi\Observation.cs" />
+    <Compile Include="Xml\HandbooksInfo.cs" />
+    <Compile Include="Proxi\Document.cs" />
+    <Compile Include="Proxi\Diagnosis.cs" />
+    <Compile Include="Proxi\TaskManager.cs" />
+    <Compile Include="Utils\Utils.cs" />
+    <Compile Include="Proxi\Ward.cs" />
+    <Compile Include="Proxi\Product.cs" />
+    <Compile Include="Xml\PatientData.cs" />
+    <Compile Include="Xml\PatientDescription.cs" />
+    <Compile Include="Proxi\PatientIdentification.cs" />
+    <Compile Include="Proxi\Employee.cs" />
+    <Compile Include="Configuration\Handbook.cs" />
+    <Compile Include="Proxi\Insurance.cs" />
+    <Compile Include="Proxi\Medicament.cs" />
+    <Compile Include="Proxi\MedicamentGroup.cs" />
+    <Compile Include="Proxi\Passport.cs" />
+    <Compile Include="Proxi\Patient.cs" />
+    <Compile Include="Proxi\Permissions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Proxi\Role.cs" />
+    <Compile Include="Proxi\Task.cs" />
+    <Compile Include="Proxi\User.cs" />
+    <Compile Include="Proxi\WatchingUtils.cs" />
+    <Compile Include="Xml\ConsultationData.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="TextFile1.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\geomethod\Geomethod.Data\Geomethod.Data.csproj">
+      <Project>{084b9904-8973-42ee-b9ad-fcdb2ef4cbaa}</Project>
+      <Name>Geomethod.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\geomethod\Geomethod\Geomethod.csproj">
+      <Project>{a61a79a7-c64c-4c3a-8fcf-cab7a33d30c1}</Project>
+      <Name>Geomethod</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

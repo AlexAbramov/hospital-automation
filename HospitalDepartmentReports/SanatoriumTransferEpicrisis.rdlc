@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <InteractiveHeight>29.7cm</InteractiveHeight>
+  <ReportParameters>
+    <ReportParameter Name="Age">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Age</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="PatientName">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>PatientName</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Department">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Department</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ClinicalDiagnosis">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ClinicalDiagnosis</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="FinalDiagnosis">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>FinalDiagnosis</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Complication">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Complication</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="DoctorName">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Doctor</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ChiefName">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Chief</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="GeneralCondition">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_10</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Coverlet">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_11</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="SystolicBloodPressure">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_12</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="DiastolicBloodPressure">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_13</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="HeartRate">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_14</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="RespiratoryRate">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_15</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="PatientExamination">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_16</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Treatment">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_17</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="AdmissionDate">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_19</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="DischargeDate">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_21</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Complaints">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_22</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Breath">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_23</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Abdomen">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_25</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Liver">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_26</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Hypostases">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_27</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Stool">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_28</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="TargetDepartment">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_29</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="TransferCause">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_30</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Sanatorium">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_31</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Profession">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_32</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Company">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_33</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="SickListData">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_34</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="SickListStartDate">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_35</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="IBSRiskFactors">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_36</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="AcuteMyocardialInfarctionStartDate">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_37</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="HospitalizationDelay">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_38</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="MyocardialInfarctionCourse">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_39</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Disturbance">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_40</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="LFKStartDate">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_41</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Turnover">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_42</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Sitting">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_43</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Walking">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_44</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Pacing">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_45</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="PatientReaction">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_46</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="PatientState">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>PatientState</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Recommendations">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_48</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ConcomitantDiagnosis">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_47</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Address">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_48</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>21cm</InteractiveWidth>
+  <rd:GridSpacing>0.25cm</rd:GridSpacing>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <RightMargin>2.5cm</RightMargin>
+  <LeftMargin>2.5cm</LeftMargin>
+  <BottomMargin>2.5cm</BottomMargin>
+  <rd:ReportID>4a3e0ee6-a600-4ac6-8675-a7c3573fc8b2</rd:ReportID>
+  <PageWidth>21cm</PageWidth>
+  <Width>16cm</Width>
+  <Body>
+    <ColumnSpacing>1cm</ColumnSpacing>
+    <ReportItems>
+      <Textbox Name="textbox33">
+        <rd:DefaultName>textbox33</rd:DefaultName>
+        <CanShrink>true</CanShrink>
+        <Top>11.5cm</Top>
+        <Style>
+          <TextAlign>Left</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>7</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>2.25cm</Left>
+        <Height>0.625cm</Height>
+        <Value>="Зав.отделением "+Parameters!ChiefName.Value</Value>
+      </Textbox>
+      <Textbox Name="textbox4">
+        <CanShrink>true</CanShrink>
+        <Top>12.25cm</Top>
+        <Style>
+          <TextAlign>Left</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>6</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>2.25cm</Left>
+        <Height>0.625cm</Height>
+        <Value>="Лечащий врач "+Parameters!DoctorName.Value</Value>
+      </Textbox>
+      <Textbox Name="textbox3">
+        <rd:DefaultName>textbox3</rd:DefaultName>
+        <Top>11.5cm</Top>
+        <Width>1cm</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>5</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>0.5cm</Left>
+        <Height>0.5cm</Height>
+        <Value>М.П.</Value>
+      </Textbox>
+      <Textbox Name="textbox2">
+        <CanShrink>true</CanShrink>
+        <Top>4cm</Top>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>4</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Height>2cm</Height>
+        <Value>="Клинический диагноз:"
++Chr(10)+"1. Основное заболевание: "+Parameters!FinalDiagnosis.Value
++Chr(10)+"2. Осложнения основного заболевания: "+Parameters!Complication.Value
++Chr(10)+"3. Сопутствующие заболевания: "+Parameters!ConcomitantDiagnosis.Value</Value>
+      </Textbox>
+      <Textbox Name="textbox35">
+        <CanShrink>true</CanShrink>
+        <Top>8.75cm</Top>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>3</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Height>2.25cm</Height>
+        <Value>
+			="Клиническая характеристика заболевания и проводимая терапия:"
+			+Chr(10)+"1. Особенности течения инфаркта миокарда: "+Parameters!MyocardialInfarctionCourse.Value
+			+Chr(10)+"2. Были ли нарушения режима (указать какие): "+Parameters!Disturbance.Value
+			+Chr(10)+"3. Активизация больного: "
+			+Chr(10)+"а) начало ЛФК (день болезни): "+Parameters!LFKStartDate.Value
+			+Chr(10)+"б) активный поворот на бок: "+Parameters!Turnover.Value
+			+Chr(10)+"в) активное присаживание: "+Parameters!Sitting.Value
+			+Chr(10)+"г) ходьба (день болезни): "+Parameters!Pacing.Value
+			+Chr(10)+"д) прогулки: "+Parameters!Walking.Value
+			+Chr(10)+"4. Реакция больного на все этапы активизации: "+Parameters!PatientReaction.Value
+			+Chr(10)+"5. Проведенное лечение в стационаре: "+Parameters!Treatment.Value
+			+Chr(10)+"6. Состояние больного к моменту перевода в отделение реабилитации и уровень физической подготовленности: "+Parameters!PatientState.Value
+			+Chr(10)+"7. Рекомендации: "+Parameters!Recommendations.Value
+			+Chr(10)+"8. Результаты дополнительных методов обследования: "+Parameters!PatientExamination.Value
+			+Chr(10)+"9. Адрес больного: "+Parameters!Address.Value</Value>
+      </Textbox>
+      <Textbox Name="textbox32">
+        <rd:DefaultName>textbox32</rd:DefaultName>
+        <CanShrink>true</CanShrink>
+        <Top>6.25cm</Top>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>2</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Height>2.25cm</Height>
+        <Value>="Краткий анализ заболевания:"
++Chr(10)+"1. С какого времени болен: "+Parameters!SickListStartDate.Value
++Chr(10)+"2. Наличие факторов риска ИБС: "+Parameters!IBSRiskFactors.Value
++Chr(10)+"3. Когда развился острый инфаркт миокарда: "+Parameters!AcuteMyocardialInfarctionStartDate.Value
++Chr(10)+"4. На какой день от начала заболевания госпитализирован: "+Parameters!HospitalizationDelay.Value
++Chr(10)+"5. Жалобы к моменту госпитализации: "+Parameters!Complaints.Value</Value>
+      </Textbox>
+      <Textbox Name="textbox1">
+        <rd:DefaultName>textbox1</rd:DefaultName>
+        <CanShrink>true</CanShrink>
+        <Top>1cm</Top>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>1</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Height>2.75cm</Height>
+        <Value>="больного с острым инфарктом миокарда в "+Parameters!Sanatorium.Value
++Chr(10)+" Наименование направившего лечебного учреждения: "+Parameters!Department.Value
++" Ф.И.О. больного: "+Parameters!PatientName.Value
++" Возраст: "+Parameters!Age.Value
++" Профессия, должность: "+Parameters!Profession.Value
++" Место работы: "+Parameters!Company.Value
++" Находился в стационаре: с "+Parameters!AdmissionDate.Value+" по: "+Parameters!DischargeDate.Value
++" Имеется больничный лист: "+Parameters!SickListData.Value</Value>
+      </Textbox>
+      <Textbox Name="textbox9">
+        <rd:DefaultName>textbox9</rd:DefaultName>
+        <Top>0.25cm</Top>
+        <Style>
+          <FontSize>14pt</FontSize>
+          <TextAlign>Center</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.63492cm</Height>
+        <Value>ПЕРЕВОДНОЙ ЭПИКРИЗ</Value>
+      </Textbox>
+    </ReportItems>
+    <Height>13.5cm</Height>
+  </Body>
+  <Language>en-US</Language>
+  <TopMargin>2.5cm</TopMargin>
+  <PageHeight>29.7cm</PageHeight>
+</Report>

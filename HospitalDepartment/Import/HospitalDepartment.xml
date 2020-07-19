@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <version>4</version>
+  <date>2009-07-20T12:14:10.519+04:00</date>
+  <checksum />
+  <timerInterval>5000</timerInterval>
+  <guiConfig>
+    <formSize>
+      <Width>0</Width>
+      <Height>0</Height>
+    </formSize>
+    <handbookControlWidth>300</handbookControlWidth>
+    <dateTimePickerShowUpDown>true</dateTimePickerShowUpDown>
+    <FontString>Microsoft Sans Serif; 12pt</FontString>
+    <GridFontString>Courier New; 12pt</GridFontString>
+  </guiConfig>
+  <departmentConfig>
+    <hospitalType>First</hospitalType>
+    <hospitalName>БСМП-1</hospitalName>
+    <headDoctor>Битвинов И.Л.</headDoctor>
+    <departmentName>кардиологическое отделение</departmentName>
+    <iconName>HospitalDepartment.Resources.Cardiology.ico</iconName>
+    <taskGenPeriod>15</taskGenPeriod>
+    <commonObservationStartHour>15</commonObservationStartHour>
+    <commonObservationPeriod>24</commonObservationPeriod>
+    <intensiveCareObservationStartHour>2</intensiveCareObservationStartHour>
+    <intensiveCareObservationPeriod>4</intensiveCareObservationPeriod>
+    <reanimationObservationStartHour>0</reanimationObservationStartHour>
+    <reanimationObservationPeriod>2</reanimationObservationPeriod>
+    <temperatureObservationStartHour>6</temperatureObservationStartHour>
+    <temperatureObservationPeriod>12</temperatureObservationPeriod>
+    <intensiveCareMaxDuration>9</intensiveCareMaxDuration>
+    <reanimationMaxDuration>9</reanimationMaxDuration>
+    <clinicDiagnosisDays>3</clinicDiagnosisDays>
+    <doctorRoundHour>11</doctorRoundHour>
+    <doctorRoundPeriod>10</doctorRoundPeriod>
+    <chiefRoundHour>11</chiefRoundHour>
+    <chiefRoundPeriod>7</chiefRoundPeriod>
+    <defaultDiet>10</defaultDiet>
+    <recommendedHospitalStayPercent>80</recommendedHospitalStayPercent>
+    <DietsList>0;1;10;11;12;13;14;15;2;3;4;5;6;7;8;9</DietsList>
+  </departmentConfig>
+  <handbookGroups>
+    <HandbookGroup id="Passport" name="Паспорт" refs="" token="">
+      <handbooks>
+        <Handbook id="IssueDepartment" name="Отделение выдавшее паспорт" handbookType="String" frequent="true" defaultValue="ОВД __ р-на г. " lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="ОВД Петровского р-на города;ОВД Николаевского р-на;ОВД Александровского р-на" />
+      </handbooks>
+    </HandbookGroup>
+    <HandbookGroup id="PatientIdentification" name="Идентификация пациента" refs="" token="">
+      <handbooks>
+        <Handbook id="AccountNumber" name="Номер счета" handbookType="String" frequent="true" defaultValue="" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="MedCardNumber" name="Медицинская карта стационарного(амбулаторного) больного" handbookType="String" frequent="true" defaultValue="" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="BirthPlace" name="Место рождения (подробно)" handbookType="String" frequent="true" defaultValue="" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="Registration" name="Адрес регистрации по месту прописки и телефон" handbookType="String" frequent="true" defaultValue="" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="Residence" name="Адрес фактического проживания и телефон" handbookType="String" frequent="true" defaultValue="" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="Citizenship" name="Гражданство" handbookType="String" frequent="true" defaultValue="Россия" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="Россия;Украина;Беларусь;Казахстан" />
+        <Handbook id="OvdMsgInfo" name="Дата и номер информации, переданной в ОВД о поступлении лица без документов" handbookType="String" frequent="true" defaultValue="" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="WorkInfo" name="Должность, адрес, телефон и полное наименование организации (для работающих)" handbookType="String" frequent="true" defaultValue="" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="DataSource" name="Источник информации о пациенте (с чьих слов или из каких документов)" handbookType="String" frequent="true" defaultValue="" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="AccountDate" name="Дата счета" handbookType="Date" frequent="false" defaultValue="" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="true" ItemsList="" />
+      </handbooks>
+    </HandbookGroup>
+    <HandbookGroup id="PatientData" name="Данные пациента" refs="" token="">
+      <handbooks>
+        <Handbook id="Company" name="Место работы" handbookType="String" frequent="true" defaultValue="пенсионер" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="пенсионер" />
+        <Handbook id="Profession" name="Профессия" handbookType="String" frequent="true" defaultValue="пенсионер" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="пенсионер;рабочий;служащий" />
+        <Handbook id="SickListCause" name="Причина нахождения на больничном" handbookType="String" frequent="true" defaultValue="данное заболевание" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="данное заболевание" />
+        <Handbook id="SickListNumber" name="Номер больничного" handbookType="String" frequent="true" defaultValue="" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="CaseHistoryNumber" name="Номер истории болезни" handbookType="String" frequent="true" defaultValue="" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="Regimen" name="Режим" handbookType="String" frequent="true" defaultValue="Постельный" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="Общий;Палатный;Постельный" />
+        <Handbook id="ECG" name="ЭКГ" handbookType="String" frequent="true" defaultValue="" lineCount="3" additive="true" visible="true" decimalPlaces="0" nullable="false" ItemsList="Уплощение зубца Т - III, AVF;AV блокада 1-ой степени;AV блокада 2-ой степени;AV блокада 3-ой степени" />
+        <Handbook id="DateAndDurationOfFormerTreatment" name="Дата и длительность нахождения на лечении по поводу этого же заболевания" handbookType="String" frequent="false" defaultValue="" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+      </handbooks>
+    </HandbookGroup>
+    <HandbookGroup id="PatientDiagnoses" name="Диагнозы" refs="" token="">
+      <handbooks>
+        <Handbook id="DirectionalDiagnosis" name="Диагноз направившего учреждения" handbookType="String" frequent="true" defaultValue="ИБС нестабильная стенокардия" lineCount="3" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="ИБС нестабильная стенокардия;ИБС острый инфаркт миокарда;Гипертоническая болезнь, гипертонический криз" />
+        <Handbook id="ComplicationDiagnosis" name="Осложнения" handbookType="String" frequent="true" defaultValue="" lineCount="3" additive="true" visible="true" decimalPlaces="0" nullable="false" ItemsList="НК 1 степени;НК 2А степени;НК 2Б степени;НК 3 степени;отеком легких;кардиогенным шоком;аритмией;ТЭЛА мелких ветвей;ТЭЛА средних ветвей;ТЭЛА крупных ветвей;ОНМК;острое легочное сердце;перикардит;осложненный сепсисом;септикопиемией; ДВС-синдромом;параксизмальная суправентрикулярная тахикардия;параксизмальная желудочковая тахикардия;фибриляция желудочков;асистолия;мерцательная аритмия тахисистолическая форма;мерцательная аритмия нормосистолическая форма" />
+        <Handbook id="ConcomitantDiagnosis" name="Сопутствующий диагноз" handbookType="String" frequent="true" defaultValue="" lineCount="3" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+      </handbooks>
+    </HandbookGroup>
+    <HandbookGroup id="PatientDescription" name="Описание пациента" refs="" token="">
+      <handbooks>
+        <Handbook id="Complaints" name="Жалобы" handbookType="String" frequent="true" defaultValue="" lineCount="3" additive="true" visible="true" decimalPlaces="0" nullable="false" ItemsList="слабость;недомогание;перебои в работе сердца;интенсивные пекущие боли за грудиной;иррад в прав. рук;иррадир между лопаток;боли давящие в грудной клетке;иррад. лев руки;тошнота;головная боль;дискомфорт в грудной клетке;сердцебиение;головокружение;чувство нехватки водуха;одышка при незначительной нагрузки;одышка в покое" />
+        <Handbook id="AnamnesisMorbi" name="Anamnesis Morbi" handbookType="String" frequent="true" defaultValue="считает себя больной в течении в течении __  лет когда впервые появились давящие боли за грудиной, Настоящее ухудшение в течении __ когда на __ присоединились боли за грудиной не купируемые обычным приемом нитратов,больная обратилась __ и госпитализирована во 2 кард. отделение для уточнения диагноза и подбора адекватной терапии. " lineCount="3" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="нет данных;считает себя больной в течении в течении __  лет когда впервые появились давящие боли за грудиной, Настоящее ухудшение в течении __ когда на __ присоединились боли за грудиной не купируемые обычным приемом нитратов,больная обратилась __ и госпитализирована во 2 кард. отделение для уточнения диагноза и подбора адекватной терапии. " />
+        <Handbook id="" name="AN.VITAE" handbookType="Header" frequent="false" defaultValue="" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="TransmittedDiseases" name="Перенесенные заболевания" handbookType="String" frequent="true" defaultValue="не болел" lineCount="3" additive="true" visible="true" decimalPlaces="0" nullable="false" ItemsList="не болел;гипертоническая болезнь __ степени в течении __ лет;остехонроз в течении __  лет;нарушение ритма по типу мерцательной аритмии в течении __ лет;нарушение проводимости по типу __  в течении __ лет" />
+        <Handbook id="HereditaryDiseases" name="Наследственные болезни" handbookType="String" frequent="false" defaultValue="не отмечал" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="не отмечал;отсутствуют" />
+        <Handbook id="ContactWithInfectedPatients" name="Контакт с инфекционными больными" handbookType="String" frequent="false" defaultValue="отсутствовал" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="отсутствовал" />
+        <Handbook id="ContagiousDiseases" name="Инфекционные заболевания" handbookType="String" frequent="false" defaultValue="отсутствуют" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="отсутствуют" />
+        <Handbook id="TickStings" name="Укусы клещей" handbookType="String" frequent="false" defaultValue="отсутствуют" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="отсутствуют" />
+        <Handbook id="TropicalCountries" name="Поездки в тропические страны" handbookType="String" frequent="false" defaultValue="отсутствуют" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="отсутствуют" />
+        <Handbook id="BadHabits" name="Вредные привычки" handbookType="String" frequent="false" defaultValue="отсутствуют" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="отсутствуют;курение;алкоголь" />
+        <Handbook id="AllergologycalAnamnesis" name="Аллергологический анамнез" handbookType="String" frequent="true" defaultValue="без особенностей" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="Hypostases" name="Отеки" handbookType="String" frequent="false" defaultValue="нет" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="нижняя треть голени;средняя треть голени;верхняя треть голени;до колена;нижняя треть бедра;средняя треть бедра;верхняя треть бедра;до низа живота" />
+        <Handbook id="GrowthAndEvolution" name="Рост и развитие" handbookType="String" frequent="false" defaultValue="нормальное" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="ChildrenDiseases" name="Детские болезни" handbookType="String" frequent="false" defaultValue="не помнит" lineCount="1" additive="true" visible="true" decimalPlaces="0" nullable="false" ItemsList="не помнит;ветрянная оспа;краснуха;скарлатина" />
+        <Handbook id="BloodTransfusion" name="Переливания крови" handbookType="String" frequent="false" defaultValue="не было в течении 6 мес" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="не было в течении 6 мес" />
+        <Handbook id="MeteoSensitivity" name="Метеочувствительность" handbookType="String" frequent="false" defaultValue="не метеочувствителен" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="метеочувствителен; не метеочувствителен" />
+        <Handbook id="OperationsAndInjures" name="Операции и травмы" handbookType="String" frequent="false" defaultValue="не было " lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="не было " />
+        <Handbook id="ConditionsOfLife" name="Материально-бытовые условия" handbookType="String" frequent="false" defaultValue="нормальные" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="нормальные" />
+        <Handbook id="InsuranceAnamnesis" name="Страховой анамнез" handbookType="String" frequent="true" defaultValue="на Б/Л не находился до момента поступления" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="на Б/Л не находился до момента поступления; с дата " />
+        <Handbook id="Adequacy" name="Адекватность" handbookType="String" frequent="false" defaultValue="адекватен" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="адекватен;не адекватен" />
+        <Handbook id="Chest" name="Грудная клетка" handbookType="String" frequent="false" defaultValue="симметричная" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="симметричная" />
+        <Handbook id="ShapeOfChest" name="Форма грудной клетки" handbookType="String" frequent="false" defaultValue="обычная" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="обычная;бочкообразная;впалая(грудь сапожника)" />
+        <Handbook id="VocalFremitus" name="Голосовое дрожание" handbookType="String" frequent="false" defaultValue="одинаковое с обеих сторон" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="ослаблено справа;ослабленно слева" />
+        <Handbook id="KinsmanWithTuberculosis" name="Близкие родственники с открытой формой туберкулеза" handbookType="String" frequent="false" defaultValue="отсутствуют" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="отсутствуют;присутствуют" />
+        <Handbook id="AntibodyHbsAg" name="Антитела к гепатиту С" handbookType="String" frequent="false" defaultValue="отсутствуют" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="отсутствуют;присутствуют" />
+        <Handbook id="" name="ST.PRESENS" handbookType="Header" frequent="false" defaultValue="" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="GeneralCondition" name="Общее состояние" handbookType="String" frequent="true" defaultValue="удовлетворительное" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="удовлетворительное;средней степени тяжести;тяжелое;крайне тяжелое" />
+        <Handbook id="ConsciousnessLevel" name="Уровень сознания" handbookType="String" frequent="false" defaultValue="в сознании" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="в сознании;сопор;кома I;кома II;кома III" />
+        <Handbook id="Position" name="Положение" handbookType="String" frequent="true" defaultValue="пассвное" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="пассивное;вынужденное;активное" />
+        <Handbook id="Constitution" name="Телосложение" handbookType="String" frequent="true" defaultValue="нормостения" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="гипостения;гиперстения;нормостения" />
+        <Handbook id="Height" name="Рост" handbookType="String" frequent="false" defaultValue="нормального" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="нормального;среднего" />
+        <Handbook id="Feeding" name="Питание" handbookType="String" frequent="false" defaultValue="норма" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="повышенного;пониженного;норма" />
+        <Handbook id="Fat" name="Ожирение" handbookType="String" frequent="false" defaultValue="отсутствует" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="1 степени;2 степени;3 степени;test" />
+        <Handbook id="Sclera" name="Склеры" handbookType="String" frequent="false" defaultValue="обычной окраски" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="обычной окраски;бледная;иньекция склер" />
+        <Handbook id="Coverlet" name="Кожный покров" handbookType="String" frequent="true" defaultValue="обычной окраски" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="обычной окраски;бледный;акроцианоз" />
+        <Handbook id="CoverletHumidity" name="Влажность покрова" handbookType="String" frequent="true" defaultValue="влажные" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="влажный;сухой" />
+        <Handbook id="CoverletTemperature" name="Температура покрова" handbookType="String" frequent="true" defaultValue="нормальная" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="нормальная;холодная;горячая" />
+        <Handbook id="Mucous" name="Слизистая" handbookType="String" frequent="false" defaultValue="бледно-розовая" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="бледно-розовая;бледная" />
+        <Handbook id="SkinTurgor" name="Тургор" handbookType="String" frequent="false" defaultValue="нормальный" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="нормальный;снижен;повышен" />
+        <Handbook id="Fauces" name="Зев" handbookType="String" frequent="false" defaultValue="обычной окраски" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="обычной окраски;гиперемирован" />
+        <Handbook id="FaucesCoating" name="Налет зева" handbookType="String" frequent="false" defaultValue="отсутствует" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="отсутствует;белого цвета;серого цвета" />
+        <Handbook id="LymphNodes" name="Лимфатические узлы" handbookType="String" frequent="false" defaultValue="не увеличены" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="не увеличены;увеличены" />
+        <Handbook id="ThyroidGland" name="Щитовидная железа" handbookType="String" frequent="false" defaultValue="нормальная" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="нормальная;увеличенная" />
+        <Handbook id="Tongue" name="Язык" handbookType="String" frequent="false" defaultValue="влажный" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="влажный;сухой;геогафический" />
+        <Handbook id="TongueCoating" name="Налет на языке" handbookType="String" frequent="false" defaultValue="" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="белый;коричневый;геграфический" />
+        <Handbook id="" name="Костно-мышечная система" handbookType="Header" frequent="false" defaultValue="" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="Muscles" name="Мышцы" handbookType="String" frequent="false" defaultValue="без видимой патологии" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="без видимой патологии;гипотрофия" />
+        <Handbook id="JointsAndBones" name="Суставы и кости" handbookType="String" frequent="false" defaultValue="без патологии" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="EmotionalLability" name="Лабильность" handbookType="String" frequent="false" defaultValue="эмоционально лабилен" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="Dermography" name="Дермографизм" handbookType="String" frequent="false" defaultValue="белый" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="белый; красный" />
+        <Handbook id="RombergPose" name="Поза Ромберга" handbookType="String" frequent="false" defaultValue="устойчив" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="устойчив;не устойчив" />
+        <Handbook id="" name="Сердечно-сосудистая система" handbookType="Header" frequent="false" defaultValue="" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="Push" name="Толчок" handbookType="String" frequent="false" defaultValue="обычный" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="обычный;разлитой" />
+        <Handbook id="PulseCharacter" name="Характер пульса" handbookType="String" frequent="false" defaultValue="нормального наполнения" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="нормального наполнения;ослабленный;напряжееный" />
+        <Handbook id="EqualToHeartRate" name="Совпадение с ЧСС" handbookType="String" frequent="false" defaultValue="совпадает" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="совпадает;не совпадает" />
+        <Handbook id="PathologicalPulsation" name="Паталогическая пульсация" handbookType="String" frequent="false" defaultValue="отсутствует" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="на сонных артериях;брюшной отдел аорты" />
+        <Handbook id="ApexBeat" name="Верхушечный толчок" handbookType="String" frequent="false" defaultValue="1,5 см от среднеключичной линии" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="1,5см;2см" />
+        <Handbook id="BeatCharacter" name="Характер толчка" handbookType="String" frequent="false" defaultValue="обычного размера" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="обычного размера;разлитой" />
+        <Handbook id="UpperBorderOfHeart" name="Верхняя граница сердца" handbookType="String" frequent="false" defaultValue="3 ребро" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="2 ребро" />
+        <Handbook id="LeftBorderOfHeart" name="Левая граница сердца" handbookType="String" frequent="false" defaultValue="1,5 см от среднеключичной линии" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="2см;3см по передней подмышечной линии" />
+        <Handbook id="RightBorderOfHeart" name="Правая граница сердца" handbookType="String" frequent="false" defaultValue="по парастернальной линии" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="по парастернальной линии; 1см от парастернальной линии" />
+        <Handbook id="HeartSounds" name="Тоны сердца" handbookType="String" frequent="false" defaultValue="" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="TonesCharacter" name="Характер тонов" handbookType="String" frequent="true" defaultValue="приглушены" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="глухие;громкие;приглушены" />
+        <Handbook id="TonesRhytm" name="Ритмичность тонов" handbookType="String" frequent="true" defaultValue="ритмичные" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="ритмичные;аритмичные" />
+        <Handbook id="CardiacMurmur" name="Шумы сердца" handbookType="String" frequent="false" defaultValue="нет" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="нет;систолический;грубый систолический;диастолический" />
+        <Handbook id="NoiseVolume" name="Сила шума" handbookType="String" frequent="false" defaultValue="громкий" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="громкий;звучный;приглушеный" />
+        <Handbook id="Timbre" name="Тембр" handbookType="String" frequent="false" defaultValue="глухой" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="глухой;звучный" />
+        <Handbook id="Localization" name="Локализация" handbookType="String" frequent="false" defaultValue="верхушке" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="по правой парастернальной линии;по левой парастернальной линии;на верхушке;над легочной артерией;над аортой" />
+        <Handbook id="Conductivity" name="Проводимость" handbookType="String" frequent="false" defaultValue="не проводится" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="по всем точкам;в подмышечную область" />
+        <Handbook id="" name="Показатели гемодинамики" handbookType="Header" frequent="false" defaultValue="" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="SystolicBloodPressure" name="Артериальное систолическое давление" handbookType="Number" frequent="true" defaultValue="120" minValue="0" maxValue="300" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="DiastolicBloodPressure" name="Артериальное диастолическое давление" handbookType="Number" frequent="true" defaultValue="80" minValue="0" maxValue="300" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="HeartRate" name="Частота сердечных сокращений" handbookType="Number" frequent="true" defaultValue="78" minValue="0" maxValue="300" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="Pulse" name="Пульс" handbookType="Number" frequent="true" defaultValue="78" minValue="0" maxValue="300" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="" name="Мочевыделитльная система" handbookType="Header" frequent="false" defaultValue="" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="Urination" name="Мочеиспускание" handbookType="String" frequent="false" defaultValue="болезнено" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="болезненое;безболезненое" />
+        <Handbook id="Kidney" name="Почки" handbookType="String" frequent="false" defaultValue="не пальпируется" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="не пальпируется;нижний полюс гладкий" />
+        <Handbook id="LumbarKnocking" name="Постукивание по поясничной области" handbookType="String" frequent="false" defaultValue="безболезнено" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="болезненое;безболезненое" />
+        <Handbook id="" name="Дыхательная система" handbookType="Header" frequent="false" defaultValue="" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="LungsSounds" name="Легочный звук" handbookType="String" frequent="false" defaultValue="" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="ParticipationInBreath" name="Участие в дыхании" handbookType="String" frequent="false" defaultValue="участвует" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="участвует;неучаствует" />
+        <Handbook id="ShortWind" name="Одышка" handbookType="String" frequent="true" defaultValue="нет" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="нет;при физ нагр 50 м;при физ нагрузки 100 м;при подьеме на лест 1 пр;при подъёме н лест 2 пр;в покое" />
+        <Handbook id="RespiratoryRate" name="Частота дыхательных движений" handbookType="Number" frequent="true" defaultValue="18" minValue="0" maxValue="200" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="Percussion" name="Сравнительная перкуссия" handbookType="String" frequent="false" defaultValue="легочной звук" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="коробочный;притупление " />
+        <Handbook id="Breath" name="Дыхание" handbookType="String" frequent="true" defaultValue="везикулярное" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="везикулярное;жесткое;ослабленное" />
+        <Handbook id="Rales" name="Хрипы" handbookType="String" frequent="false" defaultValue="нет" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="нет;влажные;сухие;крепетирующие" />
+        <Handbook id="" name="Границы легких" handbookType="Header" frequent="false" defaultValue="" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="Parasternal" name="Парастернальная" handbookType="Number" frequent="false" defaultValue="4" minValue="3" maxValue="12" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="MedianClavicular" name="Среднеключичная" handbookType="Number" frequent="false" defaultValue="5" minValue="3" maxValue="12" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="AnteriorAxillaryLeft" name="Передняя подмышечная левая" handbookType="Number" frequent="false" defaultValue="6" minValue="3" maxValue="12" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="AnteriorAxillaryRight" name="Передняя подмышечная правая" handbookType="Number" frequent="false" defaultValue="7" minValue="3" maxValue="12" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="PosteriorAxillaryLeft" name="Задняя подмышечная левая" handbookType="Number" frequent="false" defaultValue="7" minValue="3" maxValue="12" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="PosteriorAxillaryRight" name="Задняя подмышечная правая" handbookType="Number" frequent="false" defaultValue="8" minValue="3" maxValue="12" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="MedianScapularLeft" name="Средино-лопаточная левая" handbookType="Number" frequent="false" defaultValue="8" minValue="3" maxValue="12" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="MedianScapularRight" name="Средино-лопаточная правая" handbookType="Number" frequent="false" defaultValue="9" minValue="3" maxValue="12" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="ParavertebralLeft" name="Паравертебральная левая" handbookType="Number" frequent="false" defaultValue="9" minValue="3" maxValue="12" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="ParavertebralRight" name="Паравертебральная правая" handbookType="Number" frequent="false" defaultValue="10" minValue="3" maxValue="12" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="SpinalLeft" name="Позвоночная левая" handbookType="Number" frequent="false" defaultValue="10" minValue="3" maxValue="12" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="SpinalRight" name="Позвоночная правая" handbookType="Number" frequent="false" defaultValue="11" minValue="3" maxValue="12" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="" name="Пищеварительная система" handbookType="Header" frequent="false" defaultValue="" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="Abdomen" name="Живот" handbookType="String" frequent="false" defaultValue="обычных размеров" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="обычных размеров;увеличен в объёме" />
+        <Handbook id="AbdomenTenderness" name="Болезненность живота" handbookType="String" frequent="false" defaultValue="безболезненый" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="безболезненый;болезненый при пальпации в мезогастральной области;эпигастральной области;правом подреберье;левом подреберье;правой подвздошной области;левой подвздошной области;правый фланг;левый фланг" />
+        <Handbook id="LiverPalpation" name="Пальпация печени" handbookType="String" frequent="true" defaultValue="печень по краю р дуги" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="печень по краю р дуги; 2см ;4 см;6см;8см;10см;12см;14см;16см;18см;20см " />
+        <Handbook id="LiverTenderness" name="Болезненность печени" handbookType="String" frequent="false" defaultValue="безболененая" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="безболененая;болезненая " />
+        <Handbook id="Liver" name="Вид печени" handbookType="String" frequent="false" defaultValue="гладкий" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="гладкий;бугристый" />
+        <Handbook id="Stool" name="Стул" handbookType="String" frequent="false" defaultValue="нормальный" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="регулярный;склонность к запорам" />
+        <Handbook id="FormedStool" name="Оформленность стула" handbookType="String" frequent="false" defaultValue="офрмленный" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="оформленный;жидкий" />
+        <Handbook id="Spleen" name="Селезенка" handbookType="String" frequent="true" defaultValue="не пальпируется" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="не пальпируется;увеличены" />
+        <Handbook id="AbdomenPalpation" name="Пальпация живота" handbookType="String" frequent="false" defaultValue="безболезненый" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="безболезненый;болезненый при пальпации в мезогастральной области;эпигастральной области;правом подреберье;левом подреберье;правой подвздошной области;левой подвздошной области;правый фланг;левый фланг" />
+        <Handbook id="PhisiologicalFunction" name="Физиологическое отправление" handbookType="String" frequent="false" defaultValue="в норме" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="в норме" />
+        <Handbook id="DisfunctionGastrointestinalTract" name="Дисфункции желудочно-кишечного тракта" handbookType="String" frequent="false" defaultValue="небыло" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+      </handbooks>
+    </HandbookGroup>
+    <HandbookGroup id="UrineAnalysisN" name="Анализ мочи по Ничипаренко" refs="Leucocytes;Erythrocytes;Cylinders;Epithelium" token="analysis">
+      <handbooks />
+    </HandbookGroup>
+    <HandbookGroup id="UrineAnalysisZ" name="Анализ мочи по Земницкому" refs="SpecificWeight;Volume" token="analysis">
+      <handbooks />
+    </HandbookGroup>
+    <HandbookGroup id="UrineAnalysis" name="Анализ мочи" refs="" token="analysis">
+      <handbooks>
+        <Handbook id="Par11" name="Цвет" handbookType="String" frequent="true" defaultValue="соломенно-желтый" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="Par12" name="Прозрачность" handbookType="String" frequent="true" defaultValue="неполная" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="SpecificWeight" name="Удельный вес" handbookType="Number" frequent="true" defaultValue="1015" minValue="1000" maxValue="1050" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="Volume" name="Объем мл" handbookType="Number" frequent="true" defaultValue="0" minValue="0" maxValue="0" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="Protein" name="Белок (г/л)" handbookType="Number" frequent="true" defaultValue="0" minValue="0" maxValue="10" lineCount="1" additive="false" visible="true" decimalPlaces="3" nullable="true" ItemsList="" />
+        <Handbook id="Reaction" name="Реакция" handbookType="String" frequent="true" defaultValue="кислая" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="кислая;щелочная" />
+        <Handbook id="Cylinders" name="Цилиндры гиалиновые х'" handbookType="String" frequent="true" defaultValue="" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="Cylinders2" name="Цилиндры зернистые x'" handbookType="String" frequent="true" defaultValue="" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="Cylinders3" name="Цилиндры восковидные x'" handbookType="String" frequent="true" defaultValue="" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="Epithelium" name="Эпителий почек x'" handbookType="String" frequent="true" defaultValue="" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="Epithelium2" name="Эпителий мочевыводящих путей x'" handbookType="String" frequent="true" defaultValue="" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="UrineErythrocytes" name="Эритроциты x'" handbookType="String" frequent="true" defaultValue="нет" minValue="1" maxValue="6" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="UrineLeucocytes" name="Лейкоциты x'" handbookType="String" frequent="true" defaultValue="0-1 x'" minValue="2" maxValue="50" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="Par1" name="Слизь" handbookType="String" frequent="true" defaultValue="в небольшом кол-ве" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="Par2" name="Соли" handbookType="String" frequent="true" defaultValue="нет" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+      </handbooks>
+    </HandbookGroup>
+    <HandbookGroup id="BloodTest" name="Общий анализ крови" refs="" token="analysis">
+      <handbooks>
+        <Handbook id="Haemoglobin" name="Гемоглобин г/л" handbookType="Number" frequent="true" defaultValue="120" minValue="50" maxValue="200" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="Erythrocytes" name="Эритроциты (10 в 12 степени/л)" handbookType="Number" frequent="true" defaultValue="4,5" minValue="1" maxValue="6" lineCount="1" additive="false" visible="true" decimalPlaces="1" nullable="false" ItemsList="" />
+        <Handbook id="Leucocytes" name="Лейкоциты (10 в 9 степени /л)" handbookType="Number" frequent="true" defaultValue="6" minValue="2" maxValue="50" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="ColorIndex" name="Цветной показатель" handbookType="Number" frequent="true" defaultValue="0,92" minValue="0,5" maxValue="1" lineCount="1" additive="false" visible="true" decimalPlaces="1" nullable="false" ItemsList="" />
+        <Handbook id="ESR" name="COЭ (скорость оседания эритроцитов)" handbookType="Number" frequent="true" defaultValue="7" minValue="2" maxValue="60" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="Ht" name="Ht %" handbookType="Number" frequent="true" defaultValue="30" minValue="10" maxValue="50" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="Neutrophiles" name="Нейтрофилы %" handbookType="Number" frequent="true" defaultValue="70" minValue="20" maxValue="80" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="Stab" name="Палочкоядерные %" handbookType="Number" frequent="true" defaultValue="6" minValue="2" maxValue="60" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="Segmental" name="Сегментоядерные %" handbookType="Number" frequent="true" defaultValue="50" minValue="10" maxValue="70" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="Eosinophiles" name="Эозинофилы %" handbookType="Number" frequent="true" defaultValue="0" minValue="0" maxValue="20" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="Lymphocytes" name="Лимфоциты %" handbookType="Number" frequent="true" defaultValue="30" minValue="5" maxValue="60" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="Monocytes" name="Моноциты %" handbookType="Number" frequent="true" defaultValue="10" minValue="2" maxValue="20" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="Mielocytes" name="Миелоциты %" handbookType="Number" frequent="true" defaultValue="0" minValue="0" maxValue="100" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="Metamielocytes" name="Метамиелоциты %" handbookType="Number" frequent="true" defaultValue="0" minValue="0" maxValue="100" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="Plasmacells" name="Плазматические клетки %" handbookType="Number" frequent="true" defaultValue="0" minValue="0" maxValue="10" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+      </handbooks>
+    </HandbookGroup>
+    <HandbookGroup id="BiochemicalBloodTest" name="Биохимический анализ крови" refs="" token="analysis">
+      <handbooks>
+        <Handbook id="Glucose" name="Глюкоза г/л" handbookType="Number" frequent="true" defaultValue="5" minValue="2" maxValue="30" lineCount="1" additive="false" visible="true" decimalPlaces="2" nullable="false" ItemsList="" />
+        <Handbook id="Urea" name="Мочевина г/л" handbookType="Number" frequent="true" defaultValue="0" minValue="3" maxValue="50" lineCount="1" additive="false" visible="true" decimalPlaces="2" nullable="false" ItemsList="" />
+        <Handbook id="Creatinine" name="Креатинин" handbookType="Number" frequent="true" defaultValue="0" minValue="0,03" maxValue="1" lineCount="1" additive="false" visible="true" decimalPlaces="2" nullable="false" ItemsList="" />
+        <Handbook id="Bilirubin" name="Билирубин" handbookType="String" frequent="true" defaultValue="" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="WholeProtein" name="Общий белок" handbookType="Number" frequent="true" defaultValue="0" minValue="30" maxValue="90" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="AST" name="АсТ" handbookType="Number" frequent="true" defaultValue="0" minValue="0,15" maxValue="5" lineCount="1" additive="false" visible="true" decimalPlaces="2" nullable="false" ItemsList="" />
+        <Handbook id="ALT" name="АлТ" handbookType="Number" frequent="true" defaultValue="0,15" minValue="0,15" maxValue="5" lineCount="1" additive="false" visible="true" decimalPlaces="2" nullable="false" ItemsList="" />
+        <Handbook id="Cholesterol" name="Холестерин" handbookType="Number" frequent="true" defaultValue="4" minValue="2" maxValue="10" lineCount="1" additive="false" visible="true" decimalPlaces="1" nullable="false" ItemsList="" />
+        <Handbook id="BLipoproteines" name="В-липопротеиды" handbookType="Number" frequent="true" defaultValue="0" minValue="0" maxValue="4" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="TG" name="Тг" handbookType="Number" frequent="true" defaultValue="0" minValue="0" maxValue="5" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="PTI" name="ПТИ" handbookType="Number" frequent="true" defaultValue="50" minValue="20" maxValue="100" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+      </handbooks>
+    </HandbookGroup>
+    <HandbookGroup id="BiochemicalCoagulogram" name="Биохимическая коагулограмма" refs="PTI;" token="analysis">
+      <handbooks>
+        <Handbook id="PlasmaHeparinTolerance" name="Толерантность плазмы к гепарину" handbookType="String" frequent="true" defaultValue="" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="PlasmaRecalcificationTime" name="Время рекальцификации плазмы" handbookType="String" frequent="true" defaultValue="" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="ThrombusTest" name="Тромботест" handbookType="String" frequent="true" defaultValue="" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="Fibrinogen" name="Фибриноген" handbookType="String" frequent="true" defaultValue="" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="BloodClotRetraction" name="Ретракция кровяного сгустка" handbookType="String" frequent="true" defaultValue="" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="AChTV" name="АЧТВ" handbookType="String" frequent="true" defaultValue="" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="FibrinogenB" name="Фибриноген-В" handbookType="String" frequent="true" defaultValue="" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="EthanolTest" name="Этаноловый тест" handbookType="String" frequent="true" defaultValue="" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+      </handbooks>
+    </HandbookGroup>
+    <HandbookGroup id="BloodGroupAndRhesusFactor" name="Группа крови и резус фактор" refs="" token="analysis">
+      <handbooks>
+        <Handbook id="BloodGroup" name="Группа крови" handbookType="String" frequent="false" defaultValue="" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="O(I);A(II);B(III);AB(IV)" />
+        <Handbook id="RhesusFactor" name="Резус фактор" handbookType="String" frequent="false" defaultValue="" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="положительный;отрицательный" />
+      </handbooks>
+    </HandbookGroup>
+    <HandbookGroup id="APTV" name="АПТВ" refs="" token="analysis">
+      <handbooks>
+        <Handbook id="NumberOfSeconds" name="Число секунд" handbookType="String" frequent="true" defaultValue="" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+      </handbooks>
+    </HandbookGroup>
+    <HandbookGroup id="KFK" name="КФК" refs="" token="analysis">
+      <handbooks>
+        <Handbook id="Number" name="Число" handbookType="String" frequent="true" defaultValue="" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+      </handbooks>
+    </HandbookGroup>
+    <HandbookGroup id="PTI" name="ПТИ" refs="" token="analysis">
+      <handbooks>
+        <Handbook id="ProthrombinIndex" name="Протромбиновый индекс" handbookType="Number" frequent="true" defaultValue="50" minValue="20" maxValue="100" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+      </handbooks>
+    </HandbookGroup>
+    <HandbookGroup id="ECG" name="ЭКГ" refs="ECG" token="analysis">
+      <handbooks />
+    </HandbookGroup>
+    <HandbookGroup id="RW" name="RW" refs="" token="analysis">
+      <handbooks>
+        <Handbook id="WassermannTest" name="Реакция Вассермана" handbookType="String" frequent="true" defaultValue="отрицательная" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="отрицательная;положительная;слабо положительная" />
+      </handbooks>
+    </HandbookGroup>
+    <HandbookGroup id="MNO" name="МНО" refs="" token="analysis">
+      <handbooks>
+        <Handbook id="MNOData" name="Данные МНО" handbookType="Number" frequent="true" defaultValue="2" minValue="1" maxValue="4" lineCount="1" additive="false" visible="true" decimalPlaces="1" nullable="false" ItemsList="" />
+      </handbooks>
+    </HandbookGroup>
+    <HandbookGroup id="TemperatureCard" name="Температурный лист" refs="" token="">
+      <handbooks>
+        <Handbook id="Temperature" name="Температура" handbookType="Number" frequent="false" defaultValue="36,6" minValue="20" maxValue="45" lineCount="1" additive="false" visible="true" decimalPlaces="1" nullable="false" ItemsList="35,9;36,9" />
+      </handbooks>
+    </HandbookGroup>
+    <HandbookGroup id="Observation" name="Дневник наблюдения" refs="GeneralCondition;Complaints;Breath;RespiratoryRate;Rales;HeartSounds;Pulse;PulseCharacter;EqualToHeartRate;HeartRate;SystolicBloodPressure;DiastolicBloodPressure;Abdomen" token="">
+      <handbooks>
+        <Handbook id="PsychicState" name="Психическое состояние" handbookType="String" frequent="true" defaultValue="" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="Therapy" name="Терапия" handbookType="String" frequent="true" defaultValue="" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="ClinicalObservation" name="Клиническое наблюдение" handbookType="String" frequent="true" defaultValue="" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="Temperature" name="Температура" handbookType="Number" frequent="true" defaultValue="37" minValue="20" maxValue="45" lineCount="1" additive="false" visible="true" decimalPlaces="1" nullable="false" ItemsList="" />
+        <Handbook id="CentralVenousPressure" name="ЦВД" handbookType="Number" frequent="false" defaultValue="" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+      </handbooks>
+    </HandbookGroup>
+    <HandbookGroup id="DoctorRound" name="Этапный эпикриз" refs="GeneralCondition;Complaints;Breath;RespiratoryRate;Rales;HeartSounds;Pulse;HeartRate;SystolicBloodPressure;DiastolicBloodPressure;Abdomen;Liver;Hypostases;Stool;Therapy" token="">
+      <handbooks>
+        <Handbook id="Dynamics" name="Динамика состояния" handbookType="String" frequent="true" defaultValue="" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="без изменений" />
+        <Handbook id="ContinueTreatment" name="Продолжает лечение" handbookType="String" frequent="true" defaultValue="да" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="да;нет" />
+        <Handbook id="Pathologies" name="Патологии" handbookType="String" frequent="true" defaultValue="" lineCount="3" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+      </handbooks>
+    </HandbookGroup>
+    <HandbookGroup id="ChiefRound" name="Осмотр зав. отделением" refs="Dynamics;GeneralCondition;SystolicBloodPressure;DiastolicBloodPressure;HeartRate;Rales;RespiratoryRate;HeartSounds;Abdomen;Liver;Spleen;Hypostases;ECG;LumbarKnocking" token="">
+      <handbooks>
+        <Handbook id="Recommendations" name="Рекомендовано" handbookType="String" frequent="true" defaultValue="" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="Complications" name="Осложнения" handbookType="String" frequent="true" defaultValue="" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+      </handbooks>
+    </HandbookGroup>
+    <HandbookGroup id="ConsultationData" name="Консультация" refs="" token="">
+      <handbooks>
+        <Handbook id="Consultation" name="Консультация врача" handbookType="String" frequent="true" defaultValue="" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="ConsultationPurpose" name="Цель консультации" handbookType="String" frequent="true" defaultValue="" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+      </handbooks>
+    </HandbookGroup>
+    <HandbookGroup id="ReacardData" name="Данные реакарты" refs="" token="">
+      <handbooks>
+        <Handbook id="Input" name="Введено" handbookType="Number" frequent="true" defaultValue="0" minValue="0" maxValue="10000" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="DrankWater" name="Объем принятой жидкости" handbookType="Number" frequent="true" defaultValue="0" minValue="0" maxValue="10000" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="Diuresis" name="Диурез" handbookType="Number" frequent="true" defaultValue="0" minValue="0" maxValue="10000" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="Stool" name="Стул" handbookType="Number" frequent="true" defaultValue="0" minValue="0" maxValue="10000" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+      </handbooks>
+    </HandbookGroup>
+    <HandbookGroup id="Discharge" name="Выписка" refs="" token="">
+      <handbooks>
+        <Handbook id="RecommendationsToCardiologist" name="Рекомендации кардиологу" handbookType="String" frequent="true" defaultValue="" lineCount="3" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+      </handbooks>
+    </HandbookGroup>
+    <HandbookGroup id="DepartmentTransfer" name="Перевод в другое отделение" refs="Pathologies" token="">
+      <handbooks>
+        <Handbook id="TargetDepartment" name="Отделение перевода" handbookType="String" frequent="true" defaultValue="" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="TransferCause" name="Причина перевода" handbookType="String" frequent="true" defaultValue="" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+      </handbooks>
+    </HandbookGroup>
+    <HandbookGroup id="SanatoriumTransfer" name="Перевод в санаторий" refs="TargetDepartment;TransferCause;Pathologies;Recommendations" token="">
+      <handbooks>
+        <Handbook id="Sanatorium" name="Название санаторного учреждения" handbookType="String" frequent="true" defaultValue="Отделение реабилитации кардиологического санатория" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="SickListData" name="Данные больничного листа" handbookType="String" frequent="true" defaultValue="" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="IBSRiskFactors" name="Факторы риска ИБС" handbookType="String" frequent="true" defaultValue="нет" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="AcuteMyocardialInfarctionStartDate" name="Когда развился острый инфаркт миокарда" handbookType="String" frequent="true" defaultValue="День госпитализации" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="HospitalizationDelay" name="На какой день от начала заболевания госпитализирован" handbookType="String" frequent="true" defaultValue="" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="MyocardialInfarctionCourse" name="Особенности течения инфаркта миокарда" handbookType="String" frequent="true" defaultValue="" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="Disturbance" name="Нарушения режима" handbookType="String" frequent="true" defaultValue="" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="LFKStartDate" name="Начало ЛФК" handbookType="String" frequent="true" defaultValue="" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="Turnover" name="Активный поворот на бок" handbookType="String" frequent="true" defaultValue="" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="Sitting" name="Активное присаживание" handbookType="String" frequent="true" defaultValue="" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="Pacing" name="Ходьба" handbookType="String" frequent="true" defaultValue="" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="Walking" name="Прогулки" handbookType="String" frequent="true" defaultValue="" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="PatientReaction" name="Реакция больного" handbookType="String" frequent="true" defaultValue="" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+      </handbooks>
+    </HandbookGroup>
+    <HandbookGroup id="Postmortal" name="Посмертный" refs="" token="">
+      <handbooks>
+        <Handbook id="CrisisTime" name="Дата, когда начался процесс" handbookType="String" frequent="true" defaultValue="" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="ReanimationCause" name="Что случилось" handbookType="String" frequent="true" defaultValue="" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="ReanimationEffect" name="Эффект реанимационных мероприятий" handbookType="String" frequent="true" defaultValue="без эффекта" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="DeathType" name="После реанимационных мероприятий" handbookType="String" frequent="true" defaultValue="" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+        <Handbook id="DeathTime" name="Время смерти" handbookType="String" frequent="true" defaultValue="" lineCount="1" additive="false" visible="true" decimalPlaces="0" nullable="false" ItemsList="" />
+      </handbooks>
+    </HandbookGroup>
+  </handbookGroups>
+  <reportBuilders>
+    <ReportBuilder id="PatientDescription" name="Описание пациента" />
+    <ReportBuilder id="PatientIdentification" name="Идентификация" />
+    <ReportBuilder id="Prescriptions" name="Лист назначений" />
+    <ReportBuilder id="Observations" name="Дневники наблюдения" />
+    <ReportBuilder id="Discharge" name="Выписка из истории болезни" />
+    <ReportBuilder id="DischargeEpicrisis" name="Выписной эпикриз" />
+    <ReportBuilder id="DepartmentTransferEpicrisis" name="Переводной эпикриз - отделение" />
+    <ReportBuilder id="SanatoriumTransferEpicrisis" name="Переводной эпикриз - санаторий" />
+    <ReportBuilder id="PostmortalEpicrisis" name="Посмертный эпикриз" />
+    <ReportBuilder id="ExpertBoard" name="КЭК" />
+    <ReportBuilder id="Reacard" name="Реакарта" />
+    <ReportBuilder id="ConsultationRequest" name="Заявка на плановую консультцию" />
+    <ReportBuilder id="AnalysisRequest" name="Направление на анализ" />
+    <ReportBuilder id="AnalysisResult" name="Листок результатов анализа" />
+    <ReportBuilder id="TemperatureCard" name="Температурный лист" />
+    <ReportBuilder id="PrescriptionsOrder" name="Требование на получение медикаментов" />
+    <ReportBuilder id="PatientMedicaments" name="Карта персонифицированного учета" />
+  </reportBuilders>
+  <reports>
+    <Report name="Описание пациента" path="" embeddedResource="HospitalDepartment.Reports.PatientDescription.rdlc" reportBuilderId="PatientDescription" visible="true" />
+    <Report name="Описание пациента общее" path="" embeddedResource="HospitalDepartment.Reports.PatientDescriptionCommon.rdlc" reportBuilderId="PatientDescription" visible="true" />
+    <Report name="Описание пациента3" path="Reports\PatientDescription.rdlc" embeddedResource="" reportBuilderId="PatientDescription" visible="false" />
+    <Report name="Идентификация" path="" embeddedResource="HospitalDepartment.Reports.PatientIdentification.rdlc" reportBuilderId="PatientIdentification" visible="true" />
+    <Report name="Лист назначений" path="" embeddedResource="HospitalDepartment.Reports.Prescriptions.rdlc" reportBuilderId="Prescriptions" visible="true" />
+    <Report name="Дневники наблюдения" path="" embeddedResource="HospitalDepartment.Reports.Observations.rdlc" reportBuilderId="Observations" visible="true" />
+    <Report name="Выписка из истории болезни" path="" embeddedResource="HospitalDepartment.Reports.Discharge.rdlc" reportBuilderId="Discharge" visible="true" />
+    <Report name="Выписной эпикриз" path="" embeddedResource="HospitalDepartment.Reports.DischargeEpicrisis.rdlc" reportBuilderId="DischargeEpicrisis" visible="true" />
+    <Report name="Переводной эпикриз - отделение" path="" embeddedResource="HospitalDepartment.Reports.DepartmentTransferEpicrisis.rdlc" reportBuilderId="DepartmentTransferEpicrisis" visible="true" />
+    <Report name="Переводной эпикриз - санаторий" path="" embeddedResource="HospitalDepartment.Reports.SanatoriumTransferEpicrisis.rdlc" reportBuilderId="SanatoriumTransferEpicrisis" visible="true" />
+    <Report name="Постмертный эпикриз" path="" embeddedResource="HospitalDepartment.Reports.PostmortalEpicrisis.rdlc" reportBuilderId="PostmortalEpicrisis" visible="true" />
+    <Report name="КЭК" path="" embeddedResource="HospitalDepartment.Reports.ExpertBoard.rdlc" reportBuilderId="ExpertBoard" visible="true" />
+    <Report name="Реакарта" path="" embeddedResource="HospitalDepartment.Reports.Reacard.rdlc" reportBuilderId="Reacard" visible="true" />
+    <Report name="Температурный лист" path="" embeddedResource="HospitalDepartment.Reports.TemperatureCard.rdlc" reportBuilderId="TemperatureCard" visible="true" />
+    <Report name="Заявка на плановую консультцию" path="" embeddedResource="HospitalDepartment.Reports.ConsultationRequest.rdlc" reportBuilderId="ConsultationRequest" visible="true" />
+    <Report name="Направление на анализ" path="" embeddedResource="HospitalDepartment.Reports.AnalysisRequest.rdlc" reportBuilderId="AnalysisRequest" visible="true" />
+    <Report name="Листок результатов анализа" path="" embeddedResource="HospitalDepartment.Reports.AnalysisResult.rdlc" reportBuilderId="AnalysisResult" visible="true" />
+    <Report name="Требование на получение медикаментов" path="" embeddedResource="HospitalDepartment.Reports.PrescriptionsOrder.rdlc" reportBuilderId="PrescriptionsOrder" visible="true" />
+    <Report name="Карта персонифицированного учета" path="" embeddedResource="HospitalDepartment.Reports.PatientMedicaments.rdlc" reportBuilderId="PatientMedicaments" visible="true" />
+  </reports>
+  <exportTables>
+    <ExportTable name="Diagnoses" visible="true" import="true" key="Code;MCode" />
+  </exportTables>
+  <permissions>
+    <Permission id="File" group="Файл" name="" />
+    <Permission id="FileDataExchange" group="Файл" name="Обмен данными" />
+    <Permission id="Patient" group="Пациент" name="" />
+    <Permission id="PatientAdmission" group="Пациент" name="Приход пациента" />
+    <Permission id="PatientList" group="Пациент" name="Список пациентов" />
+    <Permission id="PatientListNurse" group="Пациент" name="Список пациентов для медсестер" />
+    <Permission id="Medicaments" group="Медикаменты" name="" />
+    <Permission id="MedicamentList" group="Медикаменты" name="Список медикаментов" />
+    <Permission id="MedicamentGroups" group="Медикаменты" name="Группы медикаментов" />
+    <Permission id="Medicament" group="Медикаменты" name="Медикамент" />
+    <Permission id="MedicamentGroup" group="Медикаменты" name="Группа медикаментов" />
+    <Permission id="Store" group="Склад" name="" />
+    <Permission id="StoreProducts" group="Склад" name="Номенклатура" />
+    <Permission id="StoreDocuments" group="Склад" name="Документы" />
+    <Permission id="Department" group="Отделение" name="" />
+    <Permission id="DepartmentUsers" group="Отделение" name="Персонал" />
+    <Permission id="DepartmentRoles" group="Отделение" name="Роли пользователей" />
+    <Permission id="DepartmentWards" group="Отделение" name="Палаты" />
+    <Permission id="DepartmentWatchingGroups" group="Отделение" name="Группы наблюдения" />
+    <Permission id="Admin" group="Администрирование" name="" />
+    <Permission id="AdminConfig" group="Администрирование" name="Конфигурация" />
+    <Permission id="AdminAnalysisTypes" group="Администрирование" name="Анализы" />
+    <Permission id="AdminDiagnoses" group="Администрирование" name="Диагнозы" />
+    <Permission id="AdminInsuranceCompanies" group="Администрирование" name="Страховые компании" />
+    <Permission id="AdminBackup" group="Администрирование" name="Резервное сохранение данных" />
+    <Permission id="AdminLog" group="Администрирование" name="Журнал системных сообщений" />
+  </permissions>
+  <taskTypes>
+    <TaskType id="Diary" name="Заполните дневник наблюдения" />
+    <TaskType id="DoctorRound" name="Заполните этапный эпикриз" />
+    <TaskType id="ChiefRound" name="Проведите обход пациентов с заведующим отделением" />
+    <TaskType id="TemperatureCard" name="Померьте температуру у больных" />
+    <TaskType id="SetClinicDiagnosis" name="Установите клинический диагноз" />
+    <TaskType id="CommonDuration" name="Превышен срок пребывания больного в общем отделении" />
+    <TaskType id="IntensiveCareDuration" name="Превышен срок пребывания больного в ПИТ" />
+    <TaskType id="ReanimationDuration" name="Превышен срок пребывания больного в реанимации" />
+  </taskTypes>
+</Config>

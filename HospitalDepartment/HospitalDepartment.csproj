@@ -1,0 +1,1046 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="Current">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E7F03C78-5E43-4360-90EF-4A93CF0BA41B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HospitalDepartment</RootNamespace>
+    <AssemblyName>HospitalDepartment</AssemblyName>
+    <ApplicationIcon>Resources\Cardiology.ico</ApplicationIcon>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>.\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>.\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App\App.cs" />
+    <Compile Include="Data\CardiologyDepartmentDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CardiologyDepartmentDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AnalysesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AnalysesForm.Designer.cs">
+      <DependentUpon>AnalysesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ConfigForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ConfigForm.Designer.cs">
+      <DependentUpon>ConfigForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AnalysisForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AnalysisForm.Designer.cs">
+      <DependentUpon>AnalysisForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AnalysisTypesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AnalysisTypesForm.Designer.cs">
+      <DependentUpon>AnalysisTypesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ConfigRecordsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ConfigRecordsForm.Designer.cs">
+      <DependentUpon>ConfigRecordsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AppConfigForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AppConfigForm.Designer.cs">
+      <DependentUpon>AppConfigForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PatientsPrescriptionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PatientsPrescriptionsForm.Designer.cs">
+      <DependentUpon>PatientsPrescriptionsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\StoreProductForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\StoreProductForm.Designer.cs">
+      <DependentUpon>StoreProductForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PrescriptionsOrderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PrescriptionsOrderForm.Designer.cs">
+      <DependentUpon>PrescriptionsOrderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\NurseDocumentsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\NurseDocumentsForm.Designer.cs">
+      <DependentUpon>NurseDocumentsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MedicamentGroupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MedicamentGroupForm.Designer.cs">
+      <DependentUpon>MedicamentGroupForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PrescriptionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PrescriptionsForm.Designer.cs">
+      <DependentUpon>PrescriptionsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\NursePatientsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\NursePatientsForm.Designer.cs">
+      <DependentUpon>NursePatientsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TestForm.Designer.cs">
+      <DependentUpon>TestForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\WatchingGroupsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\WatchingGroupsForm.Designer.cs">
+      <DependentUpon>WatchingGroupsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\WatchingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\WatchingForm.Designer.cs">
+      <DependentUpon>WatchingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PatientWardHistoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PatientWardHistoryForm.Designer.cs">
+      <DependentUpon>PatientWardHistoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\OutgoingDocumentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OutgoingDocumentForm.Designer.cs">
+      <DependentUpon>OutgoingDocumentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ReacardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ReacardForm.Designer.cs">
+      <DependentUpon>ReacardForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ReacardsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ReacardsForm.Designer.cs">
+      <DependentUpon>ReacardsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PatientConsultationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PatientConsultationForm.Designer.cs">
+      <DependentUpon>PatientConsultationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PatientConsultationsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PatientConsultationsForm.Designer.cs">
+      <DependentUpon>PatientConsultationsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ExpertBoardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ExpertBoardForm.Designer.cs">
+      <DependentUpon>ExpertBoardForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ExpertBoardsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ExpertBoardsForm.Designer.cs">
+      <DependentUpon>ExpertBoardsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PrescriptionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PrescriptionForm.Designer.cs">
+      <DependentUpon>PrescriptionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SelectDiagnosisForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SelectDiagnosisForm.Designer.cs">
+      <DependentUpon>SelectDiagnosisForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DischargeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DischargeForm.Designer.cs">
+      <DependentUpon>DischargeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ExportTablesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ExportTablesForm.Designer.cs">
+      <DependentUpon>ExportTablesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ObservationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ObservationForm.Designer.cs">
+      <DependentUpon>ObservationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ObservationsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ObservationsForm.Designer.cs">
+      <DependentUpon>ObservationsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ReportConfigForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ReportConfigForm.Designer.cs">
+      <DependentUpon>ReportConfigForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DocumentsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DocumentsForm.Designer.cs">
+      <DependentUpon>DocumentsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\IncomingDocumentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\IncomingDocumentForm.Designer.cs">
+      <DependentUpon>IncomingDocumentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TextForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TextForm.Designer.cs">
+      <DependentUpon>TextForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\WardsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\WardsForm.Designer.cs">
+      <DependentUpon>WardsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DiagnosisForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DiagnosisForm.Designer.cs">
+      <DependentUpon>DiagnosisForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DiagnosesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DiagnosesForm.Designer.cs">
+      <DependentUpon>DiagnosesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ProductsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ProductsForm.Designer.cs">
+      <DependentUpon>ProductsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\WardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\WardForm.Designer.cs">
+      <DependentUpon>WardForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ProductForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ProductForm.Designer.cs">
+      <DependentUpon>ProductForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PatientsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PatientsForm.Designer.cs">
+      <DependentUpon>PatientsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MedicamentGroupsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MedicamentGroupsForm.Designer.cs">
+      <DependentUpon>MedicamentGroupsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\InsuranceCompaniesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\InsuranceCompaniesForm.Designer.cs">
+      <DependentUpon>InsuranceCompaniesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MedicamentsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MedicamentsForm.Designer.cs">
+      <DependentUpon>MedicamentsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MedicamentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MedicamentForm.Designer.cs">
+      <DependentUpon>MedicamentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ReportForm.Designer.cs">
+      <DependentUpon>ReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RolesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RolesForm.Designer.cs">
+      <DependentUpon>RolesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RoleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RoleForm.Designer.cs">
+      <DependentUpon>RoleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LogForm.Designer.cs">
+      <DependentUpon>LogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UserForm.Designer.cs">
+      <DependentUpon>UserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UsersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UsersForm.Designer.cs">
+      <DependentUpon>UsersForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\HandbookForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HandbookForm.Designer.cs">
+      <DependentUpon>HandbookForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\HandbookGroupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HandbookGroupForm.Designer.cs">
+      <DependentUpon>HandbookGroupForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PatientAdmissionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PatientAdmissionForm.Designer.cs">
+      <DependentUpon>PatientAdmissionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\LoginForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="UserControls\AnalysesUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\AnalysesUserControl.Designer.cs">
+      <DependentUpon>AnalysesUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ConfigRecordUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ConfigRecordUserControl.Designer.cs">
+      <DependentUpon>ConfigRecordUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DateHandbookUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\DateHandbookUserControl.Designer.cs">
+      <DependentUpon>DateHandbookUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\StringListUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\StringListUserControl.Designer.cs">
+      <DependentUpon>StringListUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DepartmentConfigUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\DepartmentConfigUserControl.Designer.cs">
+      <DependentUpon>DepartmentConfigUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\NullableNumericUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\NullableNumericUserControl.Designer.cs">
+      <DependentUpon>NullableNumericUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SelectAnalysisTypeUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SelectAnalysisTypeUserControl.Designer.cs">
+      <DependentUpon>SelectAnalysisTypeUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\PatientDiagnosesUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\PatientDiagnosesUserControl.Designer.cs">
+      <DependentUpon>PatientDiagnosesUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DiagnosisInfoUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\DiagnosisInfoUserControl.Designer.cs">
+      <DependentUpon>DiagnosisInfoUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\NumberHandbookUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\NumberHandbookUserControl.Designer.cs">
+      <DependentUpon>NumberHandbookUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\HandbookGroupsUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\HandbookGroupsUserControl.Designer.cs">
+      <DependentUpon>HandbookGroupsUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\HandbooksInfoUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\HandbooksInfoUserControl.Designer.cs">
+      <DependentUpon>HandbooksInfoUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Interfaces.cs" />
+    <Compile Include="UserControls\MultilineComboUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\MultilineComboUserControl.Designer.cs">
+      <DependentUpon>MultilineComboUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ReportsUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ReportsUserControl.Designer.cs">
+      <DependentUpon>ReportsUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\GuiConfigUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\GuiConfigUserControl.Designer.cs">
+      <DependentUpon>GuiConfigUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SelectStoreProductUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SelectStoreProductUserControl.Designer.cs">
+      <DependentUpon>SelectStoreProductUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MedicamentGroupsUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\MedicamentGroupsUserControl.Designer.cs">
+      <DependentUpon>MedicamentGroupsUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\PatientDescriptionUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\PatientDescriptionUserControl.Designer.cs">
+      <DependentUpon>PatientDescriptionUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\PatientIdentificationUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\PatientIdentificationUserControl.Designer.cs">
+      <DependentUpon>PatientIdentificationUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\InsuranceUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\InsuranceUserControl.Designer.cs">
+      <DependentUpon>InsuranceUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\PassportUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\PassportUserControl.Designer.cs">
+      <DependentUpon>PassportUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\PatientDataUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\PatientDataUserControl.Designer.cs">
+      <DependentUpon>PatientDataUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\PermissionsUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\PermissionsUserControl.Designer.cs">
+      <DependentUpon>PermissionsUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\PrescriptionsUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\PrescriptionsUserControl.Designer.cs">
+      <DependentUpon>PrescriptionsUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SelectProductUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SelectProductUserControl.Designer.cs">
+      <DependentUpon>SelectProductUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SelectReportUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SelectReportUserControl.Designer.cs">
+      <DependentUpon>SelectReportUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\StringHandbookUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\StringHandbookUserControl.Designer.cs">
+      <DependentUpon>StringHandbookUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\TasksUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\TasksUserControl.Designer.cs">
+      <DependentUpon>TasksUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\TimeRangeUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\TimeRangeUserControl.Designer.cs">
+      <DependentUpon>TimeRangeUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserUserControl.Designer.cs">
+      <DependentUpon>UserUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\ConfigUpdate.cs" />
+    <Compile Include="Utils\TextBoxUtils.cs" />
+    <Compile Include="Utils\FormUtils.cs" />
+    <Compile Include="Utils\Utils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="HospitalDepartment.xml" />
+    <Content Include="Import\HospitalDepartment.xml" />
+    <Content Include="TextFile1.txt" />
+    <EmbeddedResource Include="Forms\AnalysesForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AnalysesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MedicamentGroupForm.resx">
+      <DependentUpon>MedicamentGroupForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PrescriptionsForm.resx">
+      <DependentUpon>PrescriptionsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NursePatientsForm.resx">
+      <DependentUpon>NursePatientsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TestForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>TestForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Cardiology.ico" />
+    <EmbeddedResource Include="Forms\AnalysisForm.resx">
+      <DependentUpon>AnalysisForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AnalysisTypesForm.resx">
+      <DependentUpon>AnalysisTypesForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WatchingGroupsForm.resx">
+      <DependentUpon>WatchingGroupsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WatchingForm.resx">
+      <DependentUpon>WatchingForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PatientWardHistoryForm.resx">
+      <DependentUpon>PatientWardHistoryForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OutgoingDocumentForm.resx">
+      <DependentUpon>OutgoingDocumentForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ReacardForm.resx">
+      <DependentUpon>ReacardForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ReacardsForm.resx">
+      <DependentUpon>ReacardsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PatientConsultationForm.resx">
+      <DependentUpon>PatientConsultationForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PatientConsultationsForm.resx">
+      <DependentUpon>PatientConsultationsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ExpertBoardForm.resx">
+      <DependentUpon>ExpertBoardForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ExpertBoardsForm.resx">
+      <DependentUpon>ExpertBoardsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PrescriptionForm.resx">
+      <DependentUpon>PrescriptionForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SelectDiagnosisForm.resx">
+      <DependentUpon>SelectDiagnosisForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DischargeForm.resx">
+      <DependentUpon>DischargeForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ExportTablesForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ExportTablesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TextForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>TextForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\userAccounts.bmp" />
+    <EmbeddedResource Include="Forms\ConfigForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ConfigForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ObservationForm.resx">
+      <DependentUpon>ObservationForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ObservationsForm.resx">
+      <DependentUpon>ObservationsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ReportConfigForm.resx">
+      <DependentUpon>ReportConfigForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DocumentsForm.resx">
+      <DependentUpon>DocumentsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\IncomingDocumentForm.resx">
+      <DependentUpon>IncomingDocumentForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WardsForm.resx">
+      <DependentUpon>WardsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DiagnosisForm.resx">
+      <DependentUpon>DiagnosisForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DiagnosesForm.resx">
+      <DependentUpon>DiagnosesForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProductsForm.resx">
+      <DependentUpon>ProductsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WardForm.resx">
+      <DependentUpon>WardForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProductForm.resx">
+      <DependentUpon>ProductForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PatientsForm.resx">
+      <DependentUpon>PatientsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MedicamentGroupsForm.resx">
+      <DependentUpon>MedicamentGroupsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InsuranceCompaniesForm.resx">
+      <DependentUpon>InsuranceCompaniesForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MedicamentsForm.resx">
+      <DependentUpon>MedicamentsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MedicamentForm.resx">
+      <DependentUpon>MedicamentForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ReportForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RolesForm.resx">
+      <DependentUpon>RolesForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RoleForm.resx">
+      <DependentUpon>RoleForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LogForm.resx">
+      <DependentUpon>LogForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UserForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>UserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UsersForm.resx">
+      <DependentUpon>UsersForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HandbookForm.resx">
+      <DependentUpon>HandbookForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HandbookGroupForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>HandbookGroupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PatientAdmissionForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PatientAdmissionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\AnalysesUserControl.resx">
+      <DependentUpon>AnalysesUserControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\StringListUserControl.resx">
+      <DependentUpon>StringListUserControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\DepartmentConfigUserControl.resx">
+      <DependentUpon>DepartmentConfigUserControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\NullableNumericUserControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>NullableNumericUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SelectAnalysisTypeUserControl.resx">
+      <DependentUpon>SelectAnalysisTypeUserControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\PatientDiagnosesUserControl.resx">
+      <DependentUpon>PatientDiagnosesUserControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\DiagnosisInfoUserControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DiagnosisInfoUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\NumberHandbookUserControl.resx">
+      <DependentUpon>NumberHandbookUserControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\HandbookGroupsUserControl.resx">
+      <DependentUpon>HandbookGroupsUserControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\HandbooksInfoUserControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>HandbooksInfoUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\MultilineComboUserControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MultilineComboUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ReportsUserControl.resx">
+      <DependentUpon>ReportsUserControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\GuiConfigUserControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>GuiConfigUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SelectStoreProductUserControl.resx">
+      <DependentUpon>SelectStoreProductUserControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\MedicamentGroupsUserControl.resx">
+      <DependentUpon>MedicamentGroupsUserControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\PatientDescriptionUserControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PatientDescriptionUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\PatientIdentificationUserControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PatientIdentificationUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\InsuranceUserControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>InsuranceUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\PassportUserControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PassportUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\PatientDataUserControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PatientDataUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\PermissionsUserControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PermissionsUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\PrescriptionsUserControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PrescriptionsUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SelectProductUserControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SelectProductUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SelectReportUserControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SelectReportUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\StringHandbookUserControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>StringHandbookUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\TasksUserControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>TasksUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\TimeRangeUserControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>TimeRangeUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserUserControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>UserUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.xml" />
+    <None Include="Data\CardiologyDepartmentDataSet.xsc">
+      <DependentUpon>CardiologyDepartmentDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Data\CardiologyDepartmentDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CardiologyDepartmentDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Data\CardiologyDepartmentDataSet.xss">
+      <DependentUpon>CardiologyDepartmentDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Import\Diagnoses.csv" />
+    <None Include="Import\Diets.csv" />
+    <None Include="Import\InsuranceCompanies.csv" />
+    <None Include="Import\MedicamentGroups.csv" />
+    <None Include="Import\Medicaments.csv" />
+    <None Include="Import\Roles.csv" />
+    <None Include="Import\Users.csv" />
+    <None Include="Import\Wards.csv" />
+    <None Include="Properties\DataSources\HospitalDepartment.Reports.ReportsDataSet.datasource" />
+    <EmbeddedResource Include="Forms\ConfigRecordsForm.resx">
+      <DependentUpon>ConfigRecordsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AppConfigForm.resx">
+      <DependentUpon>AppConfigForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\UpdateScripts.sql" />
+    <EmbeddedResource Include="Forms\PatientsPrescriptionsForm.resx">
+      <DependentUpon>PatientsPrescriptionsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StoreProductForm.resx">
+      <DependentUpon>StoreProductForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PrescriptionsOrderForm.resx">
+      <DependentUpon>PrescriptionsOrderForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NurseDocumentsForm.resx">
+      <DependentUpon>NurseDocumentsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\HospitalDepartment.locale.csv" />
+    <EmbeddedResource Include="UserControls\ConfigRecordUserControl.resx">
+      <DependentUpon>ConfigRecordUserControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\DateHandbookUserControl.resx">
+      <DependentUpon>DateHandbookUserControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\geomethod\Geomethod.Data.Windows.Forms\Geomethod.Data.Windows.Forms.csproj">
+      <Project>{2eeed423-18b7-4cdb-b91d-4712b40f8745}</Project>
+      <Name>Geomethod.Data.Windows.Forms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\geomethod\Geomethod.Data\Geomethod.Data.csproj">
+      <Project>{084b9904-8973-42ee-b9ad-fcdb2ef4cbaa}</Project>
+      <Name>Geomethod.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\geomethod\Geomethod.Windows.Forms\Geomethod.Windows.Forms.csproj">
+      <Project>{8f35562b-ea82-4994-ab24-f0d98dcd9a68}</Project>
+      <Name>Geomethod.Windows.Forms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\geomethod\Geomethod\Geomethod.csproj">
+      <Project>{a61a79a7-c64c-4c3a-8fcf-cab7a33d30c1}</Project>
+      <Name>Geomethod</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HospitalDepartmentLib\HospitalDepartmentLib.csproj">
+      <Project>{06dae4c8-2ca5-4689-9f20-c83e1cc87a7a}</Project>
+      <Name>HospitalDepartmentLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HospitalDepartmentReports\HospitalDepartmentReports.csproj">
+      <Project>{26ca833d-8d67-480b-91a9-e4b70d1c8fac}</Project>
+      <Name>HospitalDepartmentReports</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

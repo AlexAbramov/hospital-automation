@@ -1,0 +1,95 @@
+﻿-- ScriptId=13
+
+alter table StoreProducts add Series [varchar](50) not null default('')
+
+alter table Products add MedLists [varchar](50) not null default('')
+
+-- ScriptId=12
+
+alter table DocumentProducts add PlannedCount [decimal] not null default(0)
+
+alter table Documents add StorekeeperId [int] not null default(0), NDays [int] not null default(0), DocumentData [varchar] (8000)
+
+-- ScriptId=11
+
+drop table DocumentTypes
+
+create table DocumentTypes(
+	 [Id] [int] not null CONSTRAINT PK_DocumentTypes PRIMARY KEY,
+	 [Name] [varchar] (200))
+
+insert into DocumentTypes values(1,'Приход')
+
+insert into DocumentTypes values(2,'Расход')
+
+insert into DocumentTypes values(3,'Требование на получение медикаментов')
+
+
+-- ScriptId=10
+
+drop table Log
+
+create table Log(
+	 [Id] [int] IDENTITY not null CONSTRAINT PK_Log PRIMARY KEY,
+	 [Time] [datetime] not null,
+	 [Ip] [int] not null,
+	 [UserId] [int] not null,
+	 [LogType] [int] NOT NULL,
+	 [Header] [varchar](200),
+	 [Message] [varchar](8000))
+
+-- ScriptId=9
+
+insert into AnalysisTypes values ('Группа крови и резус фактор','','BloodGroupAndRhesusFactor')
+
+-- ScriptId=8
+
+alter table Medicaments add Status [int] not null default(0)
+
+alter table MedicamentGroups add Status [int] not null default(0)
+
+-- ScriptId=7
+
+alter table Patients add Status [int] not null default(0)
+
+-- ScriptId=6
+
+insert into WardTypes values(4, 'Коридор')
+
+insert into Wards values('Коридор', 4, 20)
+
+-- ScriptId=5
+
+alter table PatientWardHistory add PatientTypeId [int] not null default(1)
+
+-- ScriptId=4
+
+drop table Permissions
+
+-- ScriptId=3
+
+create table WatchingGroups(
+	 [Id] [int] IDENTITY not null CONSTRAINT PK_WatchingGroups PRIMARY KEY,
+	 [Name] [varchar] (200))
+	 
+alter table Roles add WatchingGroupId [int] not null default(0)
+
+-- ScriptId=2
+
+create table WatchingSchemes(
+	 [Id] [int] IDENTITY not null CONSTRAINT PK_WatchingSchemes PRIMARY KEY,
+	 [UserId] [int] not null,
+	 [Name] [varchar] (200) not null,
+	 [Data] [varchar](8000))
+
+
+
+-- ScriptId=1
+
+create table Watching(
+	 [Id] [int] IDENTITY not null CONSTRAINT PK_Watching PRIMARY KEY,
+	 [UserId] [int] not null,
+	 [StartTime] [datetime] not null,
+	 [EndTime] [datetime],
+	 [Data] [varchar](8000))
+

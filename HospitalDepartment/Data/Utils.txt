@@ -1,0 +1,19 @@
+update medicamentgroups set Name=LOWER(Name)
+
+update medicaments set Name=LOWER(Name)
+
+дежурство
+
+
+с.
+
+watch(ing), duty
+
+прием дежурства (напр. в больнице) — taking over duty;
+
+сдача дежурства (напр. в больнице) — passing of duty
+
+Watching
+
+[Duty]
+Id StartTime EndTime

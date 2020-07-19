@@ -1,0 +1,223 @@
+create table UpdateScripts(
+	 [Id] [int] not null CONSTRAINT PK_UpdateScripts PRIMARY KEY,
+	 [Text] [varchar](max) not null)
+
+
+-- SchemaVersion = 4
+
+create table PatientWardHistory(
+	 [Id] [int] IDENTITY not null CONSTRAINT PK_PatientWardHistory PRIMARY KEY,
+	 [PatientId] [int] not null,
+	 [Date] [datetime] not null,
+	 [WardId] [int] not null)
+	 
+alter table PrescriptionTypes 
+add 
+ShortName [varchar](50) not null default('')
+	 
+-- SchemaVersion = 3
+
+create table DocumentProducts(
+	 [Id] [int] IDENTITY not null CONSTRAINT PK_DocumentProducts PRIMARY KEY,
+	 [DocumentId] [int] not null,
+	 [StoreProductId] [int] not null)
+
+
+-- SchemaVersion = 2
+
+create table Reacards(
+	 [Id] [int] IDENTITY not null CONSTRAINT PK_Reacards PRIMARY KEY,
+	 [PatientId] [int] not null,
+	 [Date] [datetime] not null,
+	 [ReacardData] [varchar](max))
+
+--
+
+alter table Prescriptions 
+add 
+EndDate datetime not null
+
+alter table Prescriptions 
+drop COLUMN Duration
+
+delete from Prescriptions
+
+insert into AnalysisTypes values ('Анализ мочи по Ничипаренко','','UrineAnalysisN')
+insert into AnalysisTypes values ('Анализ мочи по Земницкому','','UrineAnalysisZ')
+insert into AnalysisTypes values ('Анализ мочи','','UrineAnalysis')
+insert into AnalysisTypes values ('Общий анализ крови','','BloodTest')
+insert into AnalysisTypes values ('Биохимический анализ крови','','BiochemicalBloodTest')
+insert into AnalysisTypes values ('Биохимическая коагулограмма','','BiochemicalCoagulogram')
+insert into AnalysisTypes values ('АПТВ','','APTV')
+insert into AnalysisTypes values ('КФК','','KFK')
+insert into AnalysisTypes values ('ПТИ','','PTI')
+insert into AnalysisTypes values ('ЭКГ','','ECG')
+insert into AnalysisTypes values ('RW','','RW')
+insert into AnalysisTypes values ('МНО','','MNO')
+
+--
+
+alter table AnalysisTypes 
+add 
+Code varchar(50),
+HandbookGroupId varchar(50)
+
+--
+
+exec sp_rename 'Patients.WhenArrived', 'AdmissionDate', 'COLUMN'
+
+--
+
+update PatientIdentifications set IdentificationData=''
+
+--
+
+update Observations set Description=''
+
+--
+
+create table ExpertBoards(
+	 [Id] [int] IDENTITY not null CONSTRAINT PK_ExpertBoards PRIMARY KEY,
+	 [PatientId] [int] not null,
+	 [Date] [datetime] not null,
+	 [ExpertBoardData] [varchar](max))
+
+
+
+--
+
+alter table Patients add PatientDiagnoses [varchar](max)
+
+--
+
+alter table Patients 
+add DischargeTypeId int not null default (0),
+DischargeData varchar(max),
+DischargeDate datetime
+
+--
+
+CREATE TABLE DischargeTypes (
+	 [Id] [int] IDENTITY not null CONSTRAINT PK_DischargeTypes PRIMARY KEY,
+	 [Name] [varchar](50) not null)
+
+insert into DischargeTypes values ('Выписка')
+insert into DischargeTypes values ('Перевод в другое отделение')
+insert into DischargeTypes values ('Перевод в санаторий')
+insert into DischargeTypes values ('Посмертный')
+
+--
+
+drop table Analyses
+
+CREATE TABLE AnalysisTypes (
+	 [Id] [int] IDENTITY not null CONSTRAINT PK_AnalysisTypes PRIMARY KEY,
+	 [Name] [varchar](50) not null)
+
+create table Analyses(
+	 [Id] [int] IDENTITY not null CONSTRAINT PK_Analyses PRIMARY KEY,
+	 [PatientId] [int] not null,
+	 [AnalysisTypeId] [int] not null,
+	 [RequestDate] [datetime] not null,
+	 [ExecutionDate] [datetime],
+	 [AnalysisData] [varchar](max) not null)
+
+--
+
+create table PatientConsultations(
+	 [Id] [int] IDENTITY not null CONSTRAINT PK_PatientConsultations PRIMARY KEY,
+	 [PatientId] [int] not null,
+	 [RequestDate] [datetime] not null,
+	 [ExecutionDate] [datetime],
+	 [ConsultationData] [varchar](max) not null)
+
+alter table PatientIdentifications drop column Text
+
+alter table PatientIdentifications add
+	 [Surname] [varchar](50),
+	 [Name] [varchar](50),
+	 [MiddleName] [varchar](50),
+	 [Gender] [int],
+	 [Birthday] [datetime],
+	 [IdentificationData] varchar(max)
+	 
+-- SchemaVersion = 1
+
+CREATE TABLE DbSchemaVersion (SchemaVersion int NOT NULL,Script varchar(max) NOT NULL) 
+
+insert into DbSchemaVersion values (1, '')
+
+alter table Patients add WardId int not null default (0)
+
+CREATE TABLE PatientTypes (SchemaVersion int NOT NULL,Script varchar(max) NOT NULL) 
+
+CREATE TABLE [dbo].[PatientTypes](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [varchar](50) NOT NULL,
+ CONSTRAINT [PK_PatientTypes] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)
+WITH (PAD_INDEX  = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+
+insert into PatientTypes values ('Обычный')
+insert into PatientTypes values ('ПИТ')
+insert into PatientTypes values ('Реанимационный')
+
+alter table Patients add PatientTypeId int not null default (0)
+
+CREATE TABLE [dbo].[Observations](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[PatientId] [int] NOT NULL,
+	[DoctorId] [int] NOT NULL,
+	[Time] [datetime] NOT NULL,
+	[Description] [varchar](max) NOT NULL,
+ CONSTRAINT [PK_Observations] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)
+WITH (PAD_INDEX  = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+
+CREATE TABLE [dbo].[DoctorRounds](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[PatientId] [int] NOT NULL,
+	[DoctorId] [int] NOT NULL,
+	[Time] [datetime] NOT NULL,
+	[Description] [varchar](max) NOT NULL,
+ CONSTRAINT [PK_DoctorRounds] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)
+WITH (PAD_INDEX  = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+
+CREATE TABLE [dbo].[ObservationTypes](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [varchar](50) NOT NULL,
+ CONSTRAINT [PK_ObservationTypes] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)
+WITH (PAD_INDEX  = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+
+insert into ObservationTypes values ('Дневник наблюдения')
+insert into ObservationTypes values ('Обход врача')
+insert into ObservationTypes values ('Обход заведующего')
+
+alter table Observations add ObservationTypeId int not null default (1)
+
+CREATE TABLE [dbo].[Diets](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [varchar](50) NOT NULL,
+ CONSTRAINT [PK_Diets] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)
+WITH (PAD_INDEX  = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+
+alter table Diagnoses add MCode [varchar](50) not null default ('')
+

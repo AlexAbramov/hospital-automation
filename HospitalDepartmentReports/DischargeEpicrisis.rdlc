@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <BottomMargin>2.5cm</BottomMargin>
+  <RightMargin>2.5cm</RightMargin>
+  <PageWidth>21cm</PageWidth>
+  <ReportParameters>
+    <ReportParameter Name="EndingOi">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>EndingOi</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Age">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Age</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="PatientName">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>PatientName</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="EndingA">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>EndingA</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Department">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Department</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="AdmissionDiagnosis">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>AdmissionDiagnosis</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="FinalDiagnosis">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>FinalDiagnosis</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Complication">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Complication</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="DoctorName">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Doctor</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ChiefName">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Chief</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="GeneralCondition">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_10</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Coverlet">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_11</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="SystolicBloodPressure">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_12</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="DiastolicBloodPressure">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_13</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="HeartRate">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_14</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="RespiratoryRate">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_15</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="PatientExamination">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_16</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Treatment">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_17</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="PatientStateDynamics">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_18</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>21cm</InteractiveWidth>
+  <rd:GridSpacing>0.25cm</rd:GridSpacing>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <Body>
+    <ColumnSpacing>1cm</ColumnSpacing>
+    <ReportItems>
+      <Textbox Name="textbox2">
+        <CanShrink>true</CanShrink>
+        <Top>5cm</Top>
+        <ZIndex>5</ZIndex>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>2.25cm</Height>
+        <Value>="В стационаре больному провели обследования: "+Parameters!PatientExamination.Value+Chr(10)
++"В стационаре проводилось лечение: "+Parameters!Treatment.Value+Chr(10)
++"Во время лечения состояние больного: "+Parameters!PatientStateDynamics.Value+Chr(10)
++"Основной: "+Parameters!FinalDiagnosis.Value+Chr(10)
++"Осложнения: "+Parameters!Complication.Value</Value>
+      </Textbox>
+      <Textbox Name="textbox35">
+        <CanShrink>true</CanShrink>
+        <Top>2.5cm</Top>
+        <ZIndex>4</ZIndex>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>2.25cm</Height>
+        <Value>="Объективно при поступлении: Состояние "+Parameters!GeneralCondition.Value
++"; Кожные покровы "+Parameters!Coverlet.Value
++"; АД:" +Parameters!SystolicBloodPressure.Value+"/"+Parameters!DiastolicBloodPressure.Value
++", ЧСС  "+Parameters!HeartRate.Value
++"; ЧДД "+Parameters!RespiratoryRate.Value</Value>
+      </Textbox>
+      <Textbox Name="textbox33">
+        <CanShrink>true</CanShrink>
+        <Top>8.5cm</Top>
+        <rd:DefaultName>textbox33</rd:DefaultName>
+        <ZIndex>3</ZIndex>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.625cm</Height>
+        <Value>="Зав.отделением "+Parameters!ChiefName.Value</Value>
+      </Textbox>
+      <Textbox Name="textbox32">
+        <CanShrink>true</CanShrink>
+        <Top>7.75cm</Top>
+        <rd:DefaultName>textbox32</rd:DefaultName>
+        <ZIndex>2</ZIndex>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.625cm</Height>
+        <Value>="Лечащий врач "+Parameters!DoctorName.Value</Value>
+      </Textbox>
+      <Textbox Name="textbox1">
+        <CanShrink>true</CanShrink>
+        <Top>1cm</Top>
+        <rd:DefaultName>textbox1</rd:DefaultName>
+        <ZIndex>1</ZIndex>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>1.25cm</Height>
+        <Value>="Больн"+Parameters!EndingOi.Value
++" "+Parameters!PatientName.Value
++" "+Parameters!Age.Value
++" лет поступил"+Parameters!EndingA.Value
++" на стационарное лечение в(о)"+Parameters!Department.Value
++" с диагнозом "+Parameters!AdmissionDiagnosis.Value+"."</Value>
+      </Textbox>
+      <Textbox Name="textbox9">
+        <Top>0.25cm</Top>
+        <rd:DefaultName>textbox9</rd:DefaultName>
+        <Style>
+          <TextAlign>Center</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <FontSize>14pt</FontSize>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.63492cm</Height>
+        <Value>ВЫПИСНОЙ ЭПИКРИЗ</Value>
+      </Textbox>
+    </ReportItems>
+    <Height>9.5cm</Height>
+  </Body>
+  <rd:ReportID>4a3e0ee6-a600-4ac6-8675-a7c3573fc8b2</rd:ReportID>
+  <LeftMargin>2.5cm</LeftMargin>
+  <Width>16cm</Width>
+  <InteractiveHeight>29.7cm</InteractiveHeight>
+  <Language>en-US</Language>
+  <TopMargin>2.5cm</TopMargin>
+  <PageHeight>29.7cm</PageHeight>
+</Report>

@@ -1,0 +1,1057 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <InteractiveHeight>29.7cm</InteractiveHeight>
+  <ReportParameters>
+    <ReportParameter Name="DescriptionTime">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>DescriptionTime</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="EndingOi">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>EndingOi</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Complaints">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Complaints</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="AnamnesisMorbi">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>AnamnesisMorbi</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="TransmittedDiseases">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>TransmittedDiseases</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="HereditaryDiseases">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>HereditaryDiseases</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ContactWithInfectedPatients">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ContactWithInfectedPatients</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ContagiousDiseases">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ContagiousDiseases</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="TickStings">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>TickStings</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="TropicalCountries">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>TropicalCountries</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="BadHabits">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>BadHabits</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="AllergologycalAnamnesis">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>AllergologycalAnamnesis</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="SickListCause">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>SickListCause</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="SickListStartDate">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>SickListStartDate</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="SickListNumber">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>SickListNumber</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="DateAndDurationOfFormerTreatment">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>DateAndDurationOfFormerTreatment</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="GeneralCondition">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>GeneralCondition</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ConsciousnessLevel">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ConsciousnessLevel</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Position">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Position</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Constitution">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Constitution</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Feeding">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Feeding</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Fat">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Fat</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Sclera">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Sclera</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Coverlet">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Coverlet</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="CoverletHumidity">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>CoverletHumidity</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="CoverletTemperature">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>CoverletTemperature</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Mucous">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Mucous</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="SkinTurgor">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>SkinTurgor</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Fauces">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Fauces</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="FaucesCoating">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>FaucesCoating</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="LymphNodes">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>LymphNodes</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ThyroidGland">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ThyroidGland</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Muscles">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Muscles</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="JointsAndBones">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>JointsAndBones</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="EmotionalLability">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>EmotionalLability</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Dermography">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Dermography</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="RombergPose">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>RombergPose</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="PathologicalPulsation">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>PathologycalPulsation</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ApexBeat">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ApexBeat</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="BeatCharacter">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>BeatCharacter</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="UpperBorderOfHeart">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>UpperBorderOfHeart</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="LeftBorderOfHeart">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>LeftBorderOfHeart</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="RightBorderOfHeart">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>RightBorderOfHeart</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="HeartSounds">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>HeartSounds</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="TonesCharacter">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>TonesCharacter</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="TonesRhytm">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>TonesRhytm</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="CardiacMurmur">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>CardiacMurmur</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="NoiseVolume">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>NoiseVolume</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Timbre">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Timbre</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Localization">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Localization</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Conductivity">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Conductivity</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="SystolicBloodPressure">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>SystolicBloodPressure</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="DiastolicBloodPressure">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>DiastolicBloodPressure</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="HeartRate">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>HeartRate</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Pulse">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Pulse</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="PulseShortage">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>PulseShortage</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ShortWind">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ShortWind</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="RespiratoryRate">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>RespiratoryRate</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="LungsBorders">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>LungsBorders</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Percussion">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Percussion</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Breath">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Breath</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Rales">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Rales</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Tongue">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Tongue</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="TongueCoating">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>TongueCoating</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Abdomen">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Abdomen</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="AbdomenTenderness">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>AbdomenTenderness</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="LiverPalpation">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>LiverPalpation</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="LiverTenderness">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>LiverTenderness</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Liver">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Liver</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Stool">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Stool</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Registrated">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Registrated</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Spleen">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Spleen</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Urination">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Urination</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Kidney">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Kidney</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="LumbarKnocking">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>LumbarKnocking</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Hypostasis">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Hypostasis</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ECGData">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ECGData</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="AdmissionDiagnosis">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>AdmissionDiagnosis</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Analysis">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Analysis</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Examinations">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Examinations</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Doctor">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Doctor</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Patient">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Patient</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="PatientSex">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>PatientSex</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Chief">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Chief</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Age">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Age</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="EndingA">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_58</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="EndingGo">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>EndingGo</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="GrowthAndEvolution">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>GrowthAndEvolution</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ChildrenDiseases">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ChildrenDiseases</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="BloodTransfusion">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>BloodTransfusion</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="MeteoSensitivity">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>MeteoSensitivity</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="OperationsAndInjures">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>OperationsAndInjures</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ConditionsOfLife">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ConditionsOfLife</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="InsuranceAnamnesis">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>InsuranceAnamnesis</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Adequacy">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Adequacy</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Height">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Height</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Push">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Push</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="PulseCharacter">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>PulseCharacter</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="EqualToHeartRate">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>EqualToHeartRate</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Chest">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Chest</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ShapeOfChest">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ShapeOfChest</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="VocalFremitus">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>VocalFremitus</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="LungsSounds">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>LungsSounds</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ParticipationInBreath">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ParticipationInBreath</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="AbdomenPalpation">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>AbdomenPalpation</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="PhisiologicalPoisoning">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>PhisiologicalPoisoning</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="AntibodyHbsAg">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>AntibodyHbsAg</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="DisfunctionGastrointestinalTract">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>DisfunctionGastrointestinalTract</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="KinsmanWithTuberculosis">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>KinsmanWithTuberculosis</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>21cm</InteractiveWidth>
+  <rd:GridSpacing>0.25cm</rd:GridSpacing>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <RightMargin>2.5cm</RightMargin>
+  <LeftMargin>2.5cm</LeftMargin>
+  <BottomMargin>2.5cm</BottomMargin>
+  <rd:ReportID>cfb93fce-52ac-4059-87ad-dc05bf4e5716</rd:ReportID>
+  <PageWidth>21cm</PageWidth>
+  <Width>16.00926cm</Width>
+  <Body>
+    <ColumnSpacing>1cm</ColumnSpacing>
+    <ReportItems>
+      <Textbox Name="textbox11">
+        <rd:DefaultName>textbox11</rd:DefaultName>
+        <Top>0.25cm</Top>
+        <Width>9.25cm</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>21</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>0.25cm</Left>
+        <Height>0.74074cm</Height>
+        <Value>=Parameters!DescriptionTime.Value</Value>
+      </Textbox>
+      <Textbox Name="textbox15">
+        <rd:DefaultName>textbox15</rd:DefaultName>
+        <Visibility>
+          <Hidden>true</Hidden>
+        </Visibility>
+        <Top>14.5cm</Top>
+        <Width>5.25cm</Width>
+        <Style>
+          <Color>Red</Color>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>20</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>0.25cm</Left>
+        <Height>2.5cm</Height>
+        <Value>="Добавлены 3 параметра:  AntibodyHbsAg,DisfunctionGastrointestinalTract,KinsmanWithTuberculosis."+
+"Первый-наличие антител к HbsAgГС,второй-были ли дисфункции желужочно-кишечного тракта. Третий-есть ли родственники с открытой формой туберкулеза"</Value>
+      </Textbox>
+      <Textbox Name="textbox13">
+        <rd:DefaultName>textbox13</rd:DefaultName>
+        <Top>9.75cm</Top>
+        <Width>7.2381cm</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>19</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>8.5cm</Left>
+        <Height>0.50265cm</Height>
+        <Value>=Chr(10)+
+Chr(10)+
+"Передняя подмышечная"+Chr(10)+
+"Задняя подмышечная"+Chr(10)+
+"Середино-лопаточная"+Chr(10)+
+"Паравертебральная"+Chr(10)+
+"Позвоночник"</Value>
+      </Textbox>
+      <Textbox Name="textbox12">
+        <rd:DefaultName>textbox12</rd:DefaultName>
+        <Top>9.75cm</Top>
+        <Width>7cm</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>18</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>0.25cm</Left>
+        <Height>0.50265cm</Height>
+        <Value>="Парастернальная"+Chr(10)+
+"Среднеключичная"+Chr(10)+
+"Передняя подмышечная"+Chr(10)+
+"Задняя подмышечная"+Chr(10)+
+"Средино-лопаточная"+Chr(10)+
+"Паравертебральная"+Chr(10)+
+"Позвоночник"</Value>
+      </Textbox>
+      <Textbox Name="textbox10">
+        <rd:DefaultName>textbox10</rd:DefaultName>
+        <Top>10.5cm</Top>
+        <Width>15.5cm</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>17</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>0.25cm</Left>
+        <Height>0.50265cm</Height>
+        <Value>="Аускультативно:"+LCase(Parameters!Breath.Value)+"."+Chr(10)+"Живот "+LCase(Parameters!Abdomen.Value)+", "+Parameters!ParticipationInBreath.Value+". Поверхностная пальпация живота "+LCase(Parameters!AbdomenPalpation.Value)+"."+Chr(10)+"Печень "+LCAse(Parameters!Liver.Value)+". Селезенка "+LCase(Parameters!Spleen.Value)+Chr(10)+"Физиологические отравления "+Parameters!PhisiologicalPoisoning.Value+Chr(10)+
+"На ЭКГ "+Parameters!ECGData.Value</Value>
+      </Textbox>
+      <Textbox Name="textbox9">
+        <rd:DefaultName>textbox9</rd:DefaultName>
+        <Top>7.5cm</Top>
+        <Width>15.50265cm</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>16</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>0.25cm</Left>
+        <Height>0.50265cm</Height>
+        <Value>="Переливания крови в течении последних 6 месяцев "+Parameters!BloodTransfusion.Value+". Контакт с туберкулезными больными, венерические заболевания, вирусный гепатит "+LCase(Parameters!ContagiousDiseases.Value)+" Kонтакт с инфекционными больными в течение последнего месяца: "+Parameters!ContactWithInfectedPatients.Value+". Укусы клещей "+Parameters!TickStings.Value+". Близкие родственники с отврытой формой тубеккулеза "+Parameters!KinsmanWithTuberculosis.Value+". Антитела к HbsAgГС "+Parameters!AntibodyHbsAg.Value+"Дисфункций желудочно-кишечного тракта за последний месяц "+Parameters!DisfunctionGastrointestinalTract.Value+". Аллергологический анамнез со слов больного: "+Parameters!AllergologycalAnamnesis.Value+". Страховой анамнез: "+Parameters!InsuranceAnamnesis.Value+"."+". Материально-бытовые условия "+Parameters!ConditionsOfLife.Value</Value>
+      </Textbox>
+      <Textbox Name="textbox2">
+        <rd:DefaultName>textbox2</rd:DefaultName>
+        <Top>7cm</Top>
+        <Width>3cm</Width>
+        <Style>
+          <FontWeight>700</FontWeight>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>15</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>0.25cm</Left>
+        <Height>0.50265cm</Height>
+        <Value>Эпиданамнез</Value>
+      </Textbox>
+      <Textbox Name="textbox3">
+        <rd:DefaultName>textbox3</rd:DefaultName>
+        <Top>13.75cm</Top>
+        <Width>6cm</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>14</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>0.25cm</Left>
+        <Height>0.5cm</Height>
+        <Value>=Today+" "+Now</Value>
+      </Textbox>
+      <Line Name="line1">
+        <Top>14.5cm</Top>
+        <Width>15.50265cm</Width>
+        <Style>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+        </Style>
+        <ZIndex>13</ZIndex>
+        <Left>0.25cm</Left>
+        <Height>0cm</Height>
+      </Line>
+      <Textbox Name="textbox33">
+        <rd:DefaultName>textbox33</rd:DefaultName>
+        <Top>16cm</Top>
+        <Width>10cm</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>12</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>5.75cm</Left>
+        <Height>1cm</Height>
+        <Value>="Зав.отделением "+Parameters!Chief.Value</Value>
+      </Textbox>
+      <Textbox Name="textbox32">
+        <rd:DefaultName>textbox32</rd:DefaultName>
+        <Top>14.75cm</Top>
+        <Width>10cm</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>11</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>5.75cm</Left>
+        <Height>1cm</Height>
+        <Value>="Лечащий врач "+Parameters!Doctor.Value</Value>
+      </Textbox>
+      <Textbox Name="textbox30">
+        <rd:DefaultName>textbox30</rd:DefaultName>
+        <Top>13cm</Top>
+        <Width>15.5cm</Width>
+        <Style>
+          <FontWeight>700</FontWeight>
+          <TextAlign>Center</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>10</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>0.25cm</Left>
+        <Height>0.5cm</Height>
+        <Value>План обследования и лечения:</Value>
+      </Textbox>
+      <Textbox Name="textbox29">
+        <rd:DefaultName>textbox29</rd:DefaultName>
+        <Top>12.25cm</Top>
+        <Width>15.5cm</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>9</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>0.25cm</Left>
+        <Height>0.5cm</Height>
+        <Value>=Parameters!AdmissionDiagnosis.Value</Value>
+      </Textbox>
+      <Textbox Name="textbox28">
+        <rd:DefaultName>textbox28</rd:DefaultName>
+        <Top>11.25cm</Top>
+        <Width>15.5cm</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>8</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>0.25cm</Left>
+        <Height>1cm</Height>
+        <Value>="Учитывая данные: жалоб, анамнеза, объективного обследования, у больно"+Parameters!EndingGo.Value+", имеет место:"</Value>
+      </Textbox>
+      <Textbox Name="textbox35">
+        <Top>9cm</Top>
+        <Width>15.5cm</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>7</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>0.25cm</Left>
+        <Height>0.5cm</Height>
+        <Value>="Больн"+Parameters!EndingOi.Value+" "+Parameters!Adequacy.Value+". Положение в постели "+Parameters!Position.Value+". Телосложение "+Parameters!Constitution.Value+". Общее состояние: "+LCase(Parameters!GeneralCondition.Value)+". Доступные пальпации лимфатические узлы "+LCase(Parameters!LymphNodes.Value)+". Кожные покровы "+LCase(Parameters!Coverlet.Value)+". Верхушечный толчек в 5м межреберье на "+Parameters!Push.Value+" см к наружи от левой срединно-ключичной линии. "+Chr(10)+"Границы относительной тупости сердца: "+Chr(10)+" - левая - на "+Parameters!LeftBorderOfHeart.Value+" см к наружи от среденключичной линии,"+Chr(10)+" - верхняя - "+Parameters!UpperBorderOfHeart.Value+Chr(10)+" - правая - "+Parameters!RightBorderOfHeart.Value+Chr(10)+"     Аускультативно, тоны сердца "+LCase(Parameters!HeartSounds.Value)+", "+LCase(Parameters!TonesRhytm.Value)+"."+Chr(10)+"     Пульс "+Parameters!Pulse.Value+" в 1 минуту, "+Parameters!PulseCharacter.Value+", "+Parameters!EqualToHeartRate.Value+" с числом сердечных сокращений, ЧСС  "+Parameters!HeartRate.Value+" в 1 минуту."+Chr(10)+"АД:" +Parameters!SystolicBloodPressure.Value+"/"+Parameters!DiastolicBloodPressure.Value+" мм.рт.ст. "+" Грудная клетка "+LCase(Parameters!Chest.Value)+", "+Parameters!ShapeOfChest.Value+". Голосовое дрожание "+LCase(Parameters!VocalFremitus.Value)+". При перкуссии над легкими "+LCase(Parameters!LungsSounds.Value)</Value>
+      </Textbox>
+      <Textbox Name="textbox14">
+        <rd:DefaultName>textbox14</rd:DefaultName>
+        <Top>8.25cm</Top>
+        <Width>15.5cm</Width>
+        <Style>
+          <FontWeight>700</FontWeight>
+          <TextAlign>Center</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>6</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>0.25cm</Left>
+        <Height>0.5cm</Height>
+        <Value>STATUS PRESENS </Value>
+      </Textbox>
+      <Textbox Name="textbox8">
+        <rd:DefaultName>textbox8</rd:DefaultName>
+        <Top>6.5cm</Top>
+        <Width>15.5cm</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>5</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>0.25cm</Left>
+        <Height>0.5cm</Height>
+        <Value>="Рос и развивался "+Parameters!GrowthAndEvolution.Value+". Детские болезни: "+Parameters!ChildrenDiseases.Value+"."+Chr(10)+
+"Переливаний крови "+LCase(Parameters!BloodTransfusion.Value)+"."+Chr(10)+
+"Операции-травмы: "+Parameters!OperationsAndInjures.Value+"."</Value>
+      </Textbox>
+      <Textbox Name="textbox7">
+        <rd:DefaultName>textbox7</rd:DefaultName>
+        <Top>5.75cm</Top>
+        <Width>15.5cm</Width>
+        <Style>
+          <FontWeight>700</FontWeight>
+          <TextAlign>Center</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>4</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>0.25cm</Left>
+        <Height>0.50265cm</Height>
+        <Value>ANAMNESIS VITAE</Value>
+      </Textbox>
+      <Textbox Name="textbox6">
+        <rd:DefaultName>textbox6</rd:DefaultName>
+        <Top>5cm</Top>
+        <Width>15.5cm</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>3</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>0.25cm</Left>
+        <Height>0.5cm</Height>
+        <Value>="     "+Parameters!AnamnesisMorbi.Value</Value>
+      </Textbox>
+      <Textbox Name="textbox5">
+        <rd:DefaultName>textbox5</rd:DefaultName>
+        <Top>4.25cm</Top>
+        <Width>15.5cm</Width>
+        <Style>
+          <FontWeight>700</FontWeight>
+          <TextAlign>Center</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>2</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>0.25cm</Left>
+        <Height>0.5cm</Height>
+        <Value>ANAMNESIS MORBI</Value>
+      </Textbox>
+      <Textbox Name="textbox4">
+        <Top>3.5cm</Top>
+        <Width>15.5cm</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>1</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>0.25cm</Left>
+        <Height>0.5cm</Height>
+        <Value>="     Больн"+Parameters!EndingOi.Value+" "+Parameters!Patient.Value+", "+Parameters!Age.Value+" лет,поступил"+Parameters!EndingA.Value+" на стационарное лечение во 2-ое Кардиологическое отделение БСМП №2 с жалобами на "+LCase(Parameters!Complaints.Value)+". "</Value>
+      </Textbox>
+      <Textbox Name="textbox1">
+        <rd:DefaultName>textbox1</rd:DefaultName>
+        <Top>1.25cm</Top>
+        <Width>15.5cm</Width>
+        <Style>
+          <FontSize>14pt</FontSize>
+          <TextAlign>Center</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Left>0.25cm</Left>
+        <Height>1.5cm</Height>
+        <Value>БОЛЬНИЦА СКОРОЙ МЕДИЦИНСКОЙ ПОМОЩИ № 2 
+2-ОЕ КАРДИОЛОГИЧЕСКОЕ ОТДЕЛЕНИЕ
+</Value>
+      </Textbox>
+    </ReportItems>
+    <Height>17.25cm</Height>
+  </Body>
+  <Language>en-US</Language>
+  <TopMargin>2.5cm</TopMargin>
+  <PageHeight>29.7cm</PageHeight>
+</Report>

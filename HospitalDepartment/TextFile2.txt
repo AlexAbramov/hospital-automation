@@ -1,0 +1,15 @@
+
+http://www.codeproject.com/KB/dotnet/AdvancedReportViewer.aspx?display=Print
+
+---------------------------
+
+Для использования SQL Server Express необходимо зарегистрироваться на сайте Microsoft (нужен Passport) и принять лицензию. Лицензия налагает только одно заметное ограничение: вы можете поставлять SQL Server Express только в составе своих продуктов. То есть нельзя просто брать и продавать его, ничего особо не прибавляя.
+
+Зарегистрироваться можно здесь:
+http://www.microsoft.com/sql/editions/express/redistregister.mspx
+
+Почитать лицензию (формат RTF):
+http://download.microsoft.com/download/8/9/1/891cf345-643c-49a7-98bc-58bc04def37a/SQLServer2005ExpressEdnDistributionLicense.rtf
+
+Сравнительную таблицу я привожу отдельно:
+http://blogs.gotdotnet.ru/personal/mihailik/PermaLink.aspx?guid=0f832e9c-b847-4ebb-8101-592df41614f4

@@ -1,0 +1,19 @@
+        public static int SetStatus(GmConnection conn, int id, Status status)
+        {
+            GmCommand cmd = conn.CreateCommand("update ConfigRecords set Status=@Status where Id=@Id");
+            cmd.AddInt("Id", id);
+            cmd.AddInt("Status", (int)status);
+            return cmd.ExecuteNonQuery();
+        }
+
+
+/*	public enum HandbookId
+	{ Complaints = 1, Syndromes = 2, Anamnesis = 3, BadHabits = 4, Consciousness = 5, 
+		Ñonstitution = 6, Diet = 7, Sclera = 8, Coverlet = 9, CoverletHumidity = 10, 
+		CoverletTemperature = 11, Mucous = 12, Turgor = 13, Fauces = 14, ThyroidGland = 15, 
+		BeatType = 16, HeartSound = 17, Rhythm = 18, CardiacMurmur = 19, MurmurForce = 20, 
+		Timbre = 21, Localization = 22, Conduction = 23, Dyspnea = 24, Sounds = 25, 
+		Breathing = 26, Rales = 27, Abdomen = 28, LiverPalpation=29, Liver=30,
+		Stool = 31, Urine = 32, GeneralCondition=33, Diagnosis=34
+	}*/
+//	public enum PrescriptionTypeId { Intradermal = 1, Intramuscular = 2, Intravenous = 3, Peroral = 4, Outer = 5 }

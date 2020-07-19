@@ -1,0 +1,31 @@
+Problem:
+
+---------------------------
+Установка Microsoft .NET Framework 2.0
+---------------------------
+Error 25015.Сбой при установке сборки ''C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\Microsoft.VisualBasic.dll'' вследствие системной ошибки: Системе не удается найти указанный путь.---------------------------
+Повтор   Отмена   
+---------------------------
+
+I try to install .Net Framework 2.0 and encounter this error :
+Error 25015.Failed to  install assembly
+'C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\Microsoft.VisualBasic.VSA.dll' because of system error: The filename, directory name, or volume label setup syntax is incorrect.
+
+Fix:
+
+remove the \windows\assembly folder. should works. 
+
+Fix2:
+
+Have you cleaned the failed install of .net2.0 completely before trying again?
+
+try this win installer cleanup util: 
+
+http://download.microsoft.com/download/e/9/d/e9d80355-7ab4-45b8-80e8-983a48d5e1bd/msicuu2.exe
+
+Also see this blog
+
+http://blogs.msdn.com/astebner/archive/2005/04/16/408856.aspx
+
+
+====================================

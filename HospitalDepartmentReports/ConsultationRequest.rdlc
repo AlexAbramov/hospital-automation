@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <BottomMargin>2.5cm</BottomMargin>
+  <RightMargin>2.5cm</RightMargin>
+  <PageWidth>21cm</PageWidth>
+  <ReportParameters>
+    <ReportParameter Name="DepartmentName">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_0</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="PatientName">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="CaseHistoryNumber">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_2</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Age">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_3</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Consultation">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_4</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="RequestDate">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_5</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ExecutionDate">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ExecutionDate</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ConsultationPurpose">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_6</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="WardNumber">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_7</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>21cm</InteractiveWidth>
+  <rd:GridSpacing>0.25cm</rd:GridSpacing>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <Body>
+    <ColumnSpacing>1cm</ColumnSpacing>
+    <ReportItems>
+      <Textbox Name="textbox5">
+        <CanShrink>true</CanShrink>
+        <Top>8.75cm</Top>
+        <rd:DefaultName>textbox5</rd:DefaultName>
+        <ZIndex>5</ZIndex>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>1.5cm</Height>
+        <Value>="Дата подачи заявки___________________"
++Chr(10)+"(заполняется диспетчером)"
++Chr(10)+"  Зав. отделением____________"
++Chr(10)+"  Лечащий врач_______________"
++Chr(10)+"Дата и время выполнения______"</Value>
+      </Textbox>
+      <Textbox Name="textbox4">
+        <CanShrink>true</CanShrink>
+        <Top>5.25cm</Top>
+        <ZIndex>4</ZIndex>
+        <Style>
+          <TextAlign>Center</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <FontWeight>700</FontWeight>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.63492cm</Height>
+        <Value>Заявка на плановую консультцию</Value>
+      </Textbox>
+      <Textbox Name="textbox3">
+        <CanShrink>true</CanShrink>
+        <Top>10.5cm</Top>
+        <ZIndex>3</ZIndex>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>3.56746cm</Height>
+        <Value>="Подпись консультанта__________________"+Chr(10)+
+"Подпись зав. отделением________________"+Chr(10)+
+"Подпись ст. сестры_____________________"+Chr(10)+
+"Подпись консультанта___________________"+Chr(10)+
+"Обоснована, не обоснована (подчеркнуть)"+Chr(10)+
+"Предпологаемый срок исполения__________"</Value>
+      </Textbox>
+      <Textbox Name="textbox2">
+        <CanShrink>true</CanShrink>
+        <Top>6cm</Top>
+        <rd:DefaultName>textbox2</rd:DefaultName>
+        <ZIndex>2</ZIndex>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>2.5cm</Height>
+        <Value>="Отделение: "+Parameters!DepartmentName.Value
++Chr(10)+"Палата: "+ Parameters!WardNumber.Value
++Chr(10)+"ФИО: "+ Parameters!PatientName.Value
++Chr(10)+"№ истории болезни: "+ Parameters!CaseHistoryNumber.Value
++Chr(10)+"Возраст: "+ Parameters!Age.Value
++Chr(10)+"Консультация врача (специальность): "+ Parameters!Consultation.Value
++Chr(10)+"Цель консультации: "+ Parameters!ConsultationPurpose.Value</Value>
+      </Textbox>
+      <Textbox Name="textbox1">
+        <CanShrink>true</CanShrink>
+        <Top>1cm</Top>
+        <rd:DefaultName>textbox1</rd:DefaultName>
+        <ZIndex>1</ZIndex>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>4cm</Height>
+        <Value>="Отделение: "+Parameters!DepartmentName.Value
++Chr(10)+"ФИО: "+ Parameters!PatientName.Value
++Chr(10)+"№ истории болезни: "+ Parameters!CaseHistoryNumber.Value
++Chr(10)+"Возраст: "+ Parameters!Age.Value
++Chr(10)+"Консультация: "+ Parameters!Consultation.Value
++Chr(10)+"Дата подачи заявки: "+ Parameters!RequestDate.Value
++Chr(10)+"Цель консльтации: "+ Parameters!ConsultationPurpose.Value</Value>
+      </Textbox>
+      <Textbox Name="textbox9">
+        <CanShrink>true</CanShrink>
+        <Top>0.25cm</Top>
+        <rd:DefaultName>textbox9</rd:DefaultName>
+        <Style>
+          <TextAlign>Center</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <FontSize>14pt</FontSize>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.63492cm</Height>
+        <Value>Плановая</Value>
+      </Textbox>
+    </ReportItems>
+    <Height>14.25cm</Height>
+  </Body>
+  <rd:ReportID>6c641c10-a5c7-477c-8fd5-c6d49298c850</rd:ReportID>
+  <LeftMargin>2.5cm</LeftMargin>
+  <Width>7cm</Width>
+  <InteractiveHeight>29.7cm</InteractiveHeight>
+  <Language>en-US</Language>
+  <TopMargin>2.5cm</TopMargin>
+  <PageHeight>29.7cm</PageHeight>
+</Report>

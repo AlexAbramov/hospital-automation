@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<AppConfig>
+  <version>3</version>
+  <date>2010-03-29T15:20:58.103+04:00</date>
+  <checksum />
+  <dataProvider>MS SQL Server</dataProvider>
+  <connStr>User ID=HospitalDepartment;Password=;Server=ASUS\SQLEXPRESS;Initial Catalog=HospitalDepartment;</connStr>
+  <debugMode>1</debugMode>
+  <autoBackupPeriod>1</autoBackupPeriod>
+  <autoBackupPath>C:\Users\Alex\Desktop\Backup</autoBackupPath>
+  <autoBackupSecondPath />
+</AppConfig>

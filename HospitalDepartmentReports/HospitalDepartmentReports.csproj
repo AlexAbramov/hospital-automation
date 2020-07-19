@@ -1,0 +1,126 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="Current">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{26CA833D-8D67-480B-91A9-E4B70D1C8FAC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HospitalDepartment.Reports</RootNamespace>
+    <AssemblyName>HospitalDepartmentReports</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ReportBuilders\ConsultationRequestReportBuilder.cs" />
+    <Compile Include="ReportBuilders\AnalysisRequestReportBuilder.cs" />
+    <Compile Include="ReportBuilders\AnalysisResultReportBuilder.cs" />
+    <Compile Include="ReportBuilders\PatientMedicamentsReportBuilder.cs" />
+    <Compile Include="ReportBuilders\PrescriptionsOrderReportBuilder.cs" />
+    <Compile Include="ReportBuilders\TemperatureCardReportBuilder.cs" />
+    <Compile Include="ReportBuilders\ReacardReportBuilder.cs" />
+    <Compile Include="ReportBuilders\ExpertBoardReportBuilder.cs" />
+    <Compile Include="ReportBuilders\SanatoriumTransferEpicrisisReportBuilder.cs" />
+    <Compile Include="ReportBuilders\DepartmentTransferEpicrisisReportBuilder.cs" />
+    <Compile Include="ReportBuilders\PostmortalEpicrisisReportBuilder.cs" />
+    <Compile Include="ReportBuilders\DischargeReportBuilder.cs" />
+    <Compile Include="ReportBuilders\DischargeEpicrisisReportBuilder.cs" />
+    <Compile Include="ReportBuilders\PatientIdentificationReportBuilder.cs" />
+    <Compile Include="ReportBuilders\ObservationsReportBuilder.cs" />
+    <Compile Include="ReportBuilders\PrescriptionsReportBuilder.cs" />
+    <Compile Include="ReportBuilders\BaseReportBuilder.cs" />
+    <Compile Include="ReportBuilders\PatientDescriptionReportBuilder.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportsDataSet.cs">
+      <DependentUpon>ReportsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ReportsDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportsDataSet.xsd</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AnalysisRequest.rdlc" />
+    <EmbeddedResource Include="ConsultationRequest.rdlc" />
+    <EmbeddedResource Include="AnalysisResult.rdlc" />
+    <EmbeddedResource Include="NurseMedicaments.rdlc" />
+    <EmbeddedResource Include="PatientMedicaments.rdlc" />
+    <EmbeddedResource Include="DepartmentTransferEpicrisis.rdlc" />
+    <EmbeddedResource Include="PrescriptionsOrder.rdlc" />
+    <EmbeddedResource Include="Reacard.rdlc" />
+    <EmbeddedResource Include="SanatoriumTransferEpicrisis.rdlc" />
+    <EmbeddedResource Include="PostmortalEpicrisis.rdlc" />
+    <EmbeddedResource Include="Discharge.rdlc" />
+    <EmbeddedResource Include="DischargeEpicrisis.rdlc" />
+    <EmbeddedResource Include="ExpertBoard.rdlc" />
+    <EmbeddedResource Include="PatientDescription.rdlc" />
+    <EmbeddedResource Include="PatientDescriptionCommon.rdlc" />
+    <EmbeddedResource Include="PatientIdentification.rdlc" />
+    <EmbeddedResource Include="Prescriptions.rdlc" />
+    <EmbeddedResource Include="Observations.rdlc" />
+    <EmbeddedResource Include="TemperatureCard.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReportsDataSet.xsc">
+      <DependentUpon>ReportsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ReportsDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReportsDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ReportsDataSet.xss">
+      <DependentUpon>ReportsDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\geomethod\Geomethod.Data\Geomethod.Data.csproj">
+      <Project>{084b9904-8973-42ee-b9ad-fcdb2ef4cbaa}</Project>
+      <Name>Geomethod.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\geomethod\Geomethod\Geomethod.csproj">
+      <Project>{a61a79a7-c64c-4c3a-8fcf-cab7a33d30c1}</Project>
+      <Name>Geomethod</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HospitalDepartmentLib\HospitalDepartmentLib.csproj">
+      <Project>{06dae4c8-2ca5-4689-9f20-c83e1cc87a7a}</Project>
+      <Name>HospitalDepartmentLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
